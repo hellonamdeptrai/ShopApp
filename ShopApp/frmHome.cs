@@ -16,5 +16,27 @@ namespace ShopApp
         {
             InitializeComponent();
         }
+
+        private void OpenChildForm(Form ChildForm, object btnSender)
+        {
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            this.pnMain.Controls.Add(ChildForm);
+            this.pnMain.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmLogin(), sender);
+        }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmCategories(), sender);
+        }
     }
 }
