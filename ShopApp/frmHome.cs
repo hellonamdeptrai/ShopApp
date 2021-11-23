@@ -38,5 +38,10 @@ namespace ShopApp
         {
             OpenChildForm(new frmCategories(), sender);
         }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmUsers(), sender);
+        }
     }
 }
