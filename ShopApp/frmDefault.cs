@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ShopApp
 {
-    public partial class frmProduct : Form
+    public partial class frmDefault : Form
     {
-        public frmProduct()
+        public frmDefault()
         {
             InitializeComponent();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

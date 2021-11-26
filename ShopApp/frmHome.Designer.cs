@@ -51,9 +51,8 @@ namespace ShopApp
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(313, 654);
+            this.panelMenu.Size = new System.Drawing.Size(235, 531);
             this.panelMenu.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -66,10 +65,9 @@ namespace ShopApp
             this.flowLayoutPanel1.Controls.Add(this.btnBills);
             this.flowLayoutPanel1.Controls.Add(this.btnStatistics);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 98);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 80);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(313, 556);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 451);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnHome
@@ -81,16 +79,16 @@ namespace ShopApp
             this.btnHome.ForeColor = System.Drawing.SystemColors.Window;
             this.btnHome.Image = global::ShopApp.Properties.Resources.icons8_home_32px_6;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(4, 4);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHome.Location = new System.Drawing.Point(3, 3);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(280, 74);
+            this.btnHome.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(210, 60);
             this.btnHome.TabIndex = 7;
             this.btnHome.Text = "   Trang chủ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnProducts
             // 
@@ -101,11 +99,10 @@ namespace ShopApp
             this.btnProducts.ForeColor = System.Drawing.SystemColors.Window;
             this.btnProducts.Image = global::ShopApp.Properties.Resources.icons8_product_32px;
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(4, 86);
-            this.btnProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProducts.Location = new System.Drawing.Point(3, 69);
             this.btnProducts.Name = "btnProducts";
-            this.btnProducts.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnProducts.Size = new System.Drawing.Size(280, 74);
+            this.btnProducts.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnProducts.Size = new System.Drawing.Size(210, 60);
             this.btnProducts.TabIndex = 8;
             this.btnProducts.Text = "   Sản phẩm";
             this.btnProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -122,11 +119,10 @@ namespace ShopApp
             this.btnUsers.ForeColor = System.Drawing.SystemColors.Window;
             this.btnUsers.Image = global::ShopApp.Properties.Resources.icons8_user_32px;
             this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsers.Location = new System.Drawing.Point(4, 168);
-            this.btnUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUsers.Location = new System.Drawing.Point(3, 135);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnUsers.Size = new System.Drawing.Size(280, 74);
+            this.btnUsers.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnUsers.Size = new System.Drawing.Size(210, 60);
             this.btnUsers.TabIndex = 9;
             this.btnUsers.Text = "   Người dùng";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,11 +139,10 @@ namespace ShopApp
             this.btnCategories.ForeColor = System.Drawing.SystemColors.Window;
             this.btnCategories.Image = global::ShopApp.Properties.Resources.icons8_category_32px;
             this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategories.Location = new System.Drawing.Point(4, 250);
-            this.btnCategories.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCategories.Location = new System.Drawing.Point(3, 201);
             this.btnCategories.Name = "btnCategories";
-            this.btnCategories.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnCategories.Size = new System.Drawing.Size(280, 74);
+            this.btnCategories.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnCategories.Size = new System.Drawing.Size(210, 60);
             this.btnCategories.TabIndex = 10;
             this.btnCategories.Text = "   Danh mục";
             this.btnCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,11 +159,10 @@ namespace ShopApp
             this.btnBills.ForeColor = System.Drawing.SystemColors.Window;
             this.btnBills.Image = global::ShopApp.Properties.Resources.icons8_shopping_cart_32px_1;
             this.btnBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBills.Location = new System.Drawing.Point(4, 332);
-            this.btnBills.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBills.Location = new System.Drawing.Point(3, 267);
             this.btnBills.Name = "btnBills";
-            this.btnBills.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnBills.Size = new System.Drawing.Size(280, 74);
+            this.btnBills.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnBills.Size = new System.Drawing.Size(210, 60);
             this.btnBills.TabIndex = 11;
             this.btnBills.Text = "   Hóa đơn";
             this.btnBills.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,11 +178,10 @@ namespace ShopApp
             this.btnStatistics.ForeColor = System.Drawing.SystemColors.Window;
             this.btnStatistics.Image = global::ShopApp.Properties.Resources.icons8_chart_32px;
             this.btnStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatistics.Location = new System.Drawing.Point(4, 414);
-            this.btnStatistics.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStatistics.Location = new System.Drawing.Point(3, 333);
             this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnStatistics.Size = new System.Drawing.Size(280, 74);
+            this.btnStatistics.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnStatistics.Size = new System.Drawing.Size(210, 60);
             this.btnStatistics.TabIndex = 12;
             this.btnStatistics.Text = "   Thống kê";
             this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -200,40 +193,36 @@ namespace ShopApp
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(313, 98);
+            this.panelLogo.Size = new System.Drawing.Size(235, 80);
             this.panelLogo.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(313, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(235, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(866, 98);
+            this.panel1.Size = new System.Drawing.Size(649, 80);
             this.panel1.TabIndex = 1;
             // 
             // pnMain
             // 
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMain.Location = new System.Drawing.Point(313, 98);
-            this.pnMain.Margin = new System.Windows.Forms.Padding(4);
+            this.pnMain.Location = new System.Drawing.Point(235, 80);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(866, 556);
+            this.pnMain.Size = new System.Drawing.Size(649, 451);
             this.pnMain.TabIndex = 2;
             // 
             // frmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 654);
+            this.ClientSize = new System.Drawing.Size(884, 531);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1061, 605);
+            this.MinimumSize = new System.Drawing.Size(800, 499);
             this.Name = "frmHome";
             this.Text = "Home";
             this.panelMenu.ResumeLayout(false);

@@ -1,7 +1,7 @@
 ﻿
 namespace ShopApp
 {
-    partial class frmUsers
+    partial class frmProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -80,7 +80,7 @@ namespace ShopApp
             this.groupBox2.Size = new System.Drawing.Size(533, 412);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh sách người dùng";
+            this.groupBox2.Text = "Danh sách sản phẩm";
             // 
             // dataGridView1
             // 
@@ -318,7 +318,7 @@ namespace ShopApp
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
-            // frmUsers
+            // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -326,8 +326,8 @@ namespace ShopApp
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "frmUsers";
-            this.Text = "frmUsers";
+            this.Name = "frmProducts";
+            this.Text = "frmProducts";
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

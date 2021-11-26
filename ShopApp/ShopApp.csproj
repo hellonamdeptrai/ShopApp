@@ -70,6 +70,12 @@
     <Compile Include="frmCategories.Designer.cs">
       <DependentUpon>frmCategories.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDefault.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDefault.Designer.cs">
+      <DependentUpon>frmDefault.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,16 +94,19 @@
     <Compile Include="frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProduct.cs">
+    <Compile Include="frmProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProduct.Designer.cs">
-      <DependentUpon>frmProduct.cs</DependentUpon>
+    <Compile Include="frmProducts.Designer.cs">
+      <DependentUpon>frmProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCategories.resx">
       <DependentUpon>frmCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDefault.resx">
+      <DependentUpon>frmDefault.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -108,8 +117,8 @@
     <EmbeddedResource Include="frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProduct.resx">
-      <DependentUpon>frmProduct.cs</DependentUpon>
+    <EmbeddedResource Include="frmProducts.resx">
+      <DependentUpon>frmProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,6 +178,21 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_exit_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_edit_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_create_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_24px_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

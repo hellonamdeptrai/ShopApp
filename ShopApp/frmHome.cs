@@ -31,7 +31,7 @@ namespace ShopApp
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmLogin(), sender);
+            OpenChildForm(new frmProducts(), sender);
         }
 
         private void btnCategories_Click(object sender, EventArgs e)
@@ -42,6 +42,11 @@ namespace ShopApp
         private void btnUsers_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmUsers(), sender);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmDefault(), sender);
         }
     }
 }

@@ -83,9 +83,49 @@ namespace ShopApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_create_24px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_create_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_24px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_delete_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_24px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_edit_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_estimate_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_estimate_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_exit_24px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_exit_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +146,16 @@ namespace ShopApp.Properties {
         internal static System.Drawing.Bitmap icons8_product_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_product_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_24px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_search_24px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
