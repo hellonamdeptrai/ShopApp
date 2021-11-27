@@ -48,5 +48,15 @@ namespace ShopApp
         {
             OpenChildForm(new frmDefault(), sender);
         }
+
+        private void btnBills_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmCarts(), sender);
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmAnalytics(), sender);
+        }
     }
 }

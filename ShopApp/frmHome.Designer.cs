@@ -164,10 +164,11 @@ namespace ShopApp
             this.btnBills.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnBills.Size = new System.Drawing.Size(210, 60);
             this.btnBills.TabIndex = 11;
-            this.btnBills.Text = "   Hóa đơn";
+            this.btnBills.Text = "   Bán hàng";
             this.btnBills.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBills.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBills.UseVisualStyleBackColor = true;
+            this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
             // 
             // btnStatistics
             // 
@@ -187,6 +188,7 @@ namespace ShopApp
             this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // panelLogo
             // 
