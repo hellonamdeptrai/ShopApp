@@ -153,9 +153,29 @@ namespace ShopApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_math_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_plus_math_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_product_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_product_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reset_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_reset_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

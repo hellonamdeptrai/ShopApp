@@ -58,5 +58,24 @@ namespace ShopApp
         {
             OpenChildForm(new frmAnalytics(), sender);
         }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+            Code.Functions.Connect();
+            OpenChildForm(new frmDefault(), sender);
+        }
+
+        private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn thoát khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else 
+            {
+                Code.Functions.Disconnect();
+            }
+        }
     }
 }

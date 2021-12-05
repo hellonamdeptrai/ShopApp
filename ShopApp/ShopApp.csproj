@@ -88,6 +88,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Functions.cs" />
     <Compile Include="frmAnalytics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,13 +242,13 @@
     <None Include="Resources\icons8_filter_24px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ShopDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\icons8_reset_32px.png" />
+    <None Include="Resources\icons8_plus_math_32px.png" />
+    <Content Include="ShopDatabase.mdf" />
     <Content Include="ShopDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ShopDatabase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

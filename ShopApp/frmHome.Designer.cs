@@ -227,6 +227,8 @@ namespace ShopApp
             this.MinimumSize = new System.Drawing.Size(800, 499);
             this.Name = "frmHome";
             this.Text = "Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHome_FormClosing);
+            this.Load += new System.EventHandler(this.frmHome_Load);
             this.panelMenu.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
