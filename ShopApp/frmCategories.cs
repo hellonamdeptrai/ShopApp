@@ -27,8 +27,8 @@ namespace ShopApp
 
         private void LoadDataGridView()
         {
-            DataSet ds = Code.Functions.GetData("GetCategories");
-            dgvCategories.DataSource = ds.Tables[0];
+            DataTable dt = Code.Functions.GetData("GetCategories");
+            dgvCategories.DataSource = dt;
             dgvCategories.Refresh();
         }
 
@@ -60,9 +60,8 @@ namespace ShopApp
 
         private void dgvCategories_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1 && e.RowIndex != dgvCategories.RowCount-1)
+            if (e.RowIndex != -1)
             {
-                MessageBox.Show(e.RowIndex +" - "+ dgvCategories.RowCount);
                 DataGridViewRow dgvRow = dgvCategories.Rows[e.RowIndex];
                 lbId.Text = dgvRow.Cells["Id"].Value.ToString();
                 txtName.Text = dgvRow.Cells["Names"].Value.ToString();
@@ -164,11 +163,7 @@ namespace ShopApp
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            Application.Exit();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -200,12 +195,12 @@ namespace ShopApp
 
             cmd.ExecuteNonQuery();
 
-            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
             SqlDataAdapter dap = new SqlDataAdapter(cmd);
 
-            dap.Fill(ds);
-            dgvCategories.DataSource = ds.Tables[0];
+            dap.Fill(dt);
+            dgvCategories.DataSource = dt;
             dgvCategories.Refresh();
         }
     }

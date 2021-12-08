@@ -93,6 +93,8 @@ namespace ShopApp
             // 
             // dgvCategories
             // 
+            this.dgvCategories.AllowUserToAddRows = false;
+            this.dgvCategories.AllowUserToDeleteRows = false;
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -103,6 +105,7 @@ namespace ShopApp
             this.dgvCategories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCategories.Location = new System.Drawing.Point(3, 23);
             this.dgvCategories.Name = "dgvCategories";
+            this.dgvCategories.ReadOnly = true;
             this.dgvCategories.Size = new System.Drawing.Size(527, 386);
             this.dgvCategories.TabIndex = 0;
             this.dgvCategories.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellClick);
@@ -112,6 +115,7 @@ namespace ShopApp
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Mã danh mục";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Width = 130;
             // 
             // Names
@@ -119,6 +123,7 @@ namespace ShopApp
             this.Names.DataPropertyName = "Name";
             this.Names.HeaderText = "Tên danh mục";
             this.Names.Name = "Names";
+            this.Names.ReadOnly = true;
             this.Names.Width = 150;
             // 
             // Description
@@ -126,6 +131,7 @@ namespace ShopApp
             this.Description.DataPropertyName = "Description";
             this.Description.HeaderText = "Mô Tả";
             this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             this.Description.Width = 200;
             // 
             // Date_created
@@ -134,6 +140,7 @@ namespace ShopApp
             this.Date_created.FillWeight = 110F;
             this.Date_created.HeaderText = "Ngày Tạo";
             this.Date_created.Name = "Date_created";
+            this.Date_created.ReadOnly = true;
             // 
             // Date_edit
             // 
@@ -141,6 +148,7 @@ namespace ShopApp
             this.Date_edit.FillWeight = 110F;
             this.Date_edit.HeaderText = "Ngày sửa";
             this.Date_edit.Name = "Date_edit";
+            this.Date_edit.ReadOnly = true;
             // 
             // groupBox1
             // 
