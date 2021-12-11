@@ -25,6 +25,8 @@ namespace ShopApp
 
         private void frmUsers_Load(object sender, EventArgs e)
         {
+            ResetTextBox();
+            ResetError();
             EnabledButton(false);
             EnabledTextBox(false);
             LoadDataGridView();

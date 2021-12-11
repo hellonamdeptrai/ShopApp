@@ -31,32 +31,73 @@ namespace ShopApp
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Avatar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Origin_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sale_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount_percent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_created = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSalePrice = new System.Windows.Forms.TextBox();
+            this.txtOriginPrice = new System.Windows.Forms.TextBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.lbQuantityError = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.btnAddImage = new System.Windows.Forms.Button();
+            this.ptbAvatar = new System.Windows.Forms.PictureBox();
+            this.lbOriginPriceError = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lbStatusError = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbSalePriceError = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lbCategoryError = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbBrandError = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbNameError = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lbContentError = new System.Windows.Forms.Label();
+            this.lbImageError = new System.Windows.Forms.Label();
+            this.txtContent = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.ofdImage = new System.Windows.Forms.OpenFileDialog();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +113,7 @@ namespace ShopApp
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvProducts);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 12F);
             this.groupBox2.Location = new System.Drawing.Point(0, 80);
@@ -82,19 +123,138 @@ namespace ShopApp
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách sản phẩm";
             // 
-            // dataGridView1
+            // dgvProducts
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(527, 386);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Avatar,
+            this.Names,
+            this.Brand,
+            this.Quantity,
+            this.Origin_price,
+            this.Sale_price,
+            this.Discount_percent,
+            this.Status,
+            this.Category_id,
+            this.Content,
+            this.Date_created,
+            this.Date_edit});
+            this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProducts.Location = new System.Drawing.Point(3, 23);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowTemplate.Height = 50;
+            this.dgvProducts.Size = new System.Drawing.Size(527, 386);
+            this.dgvProducts.TabIndex = 0;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Mã sản phẩm";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 135;
+            // 
+            // Avatar
+            // 
+            this.Avatar.DataPropertyName = "Avatar";
+            this.Avatar.HeaderText = "Ảnh sản phẩm";
+            this.Avatar.Name = "Avatar";
+            this.Avatar.ReadOnly = true;
+            this.Avatar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Avatar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Avatar.Width = 150;
+            // 
+            // Names
+            // 
+            this.Names.DataPropertyName = "Name";
+            this.Names.HeaderText = "Tên sản phẩm";
+            this.Names.Name = "Names";
+            this.Names.ReadOnly = true;
+            this.Names.Width = 150;
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "Brand";
+            this.Brand.HeaderText = "Hãng";
+            this.Brand.Name = "Brand";
+            this.Brand.ReadOnly = true;
+            this.Brand.Width = 150;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Số lượng";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Origin_price
+            // 
+            this.Origin_price.DataPropertyName = "Origin_price";
+            this.Origin_price.HeaderText = "Giá gốc";
+            this.Origin_price.Name = "Origin_price";
+            this.Origin_price.ReadOnly = true;
+            // 
+            // Sale_price
+            // 
+            this.Sale_price.DataPropertyName = "Sale_price";
+            this.Sale_price.HeaderText = "Giá bán";
+            this.Sale_price.Name = "Sale_price";
+            this.Sale_price.ReadOnly = true;
+            // 
+            // Discount_percent
+            // 
+            this.Discount_percent.DataPropertyName = "Discount_percent";
+            this.Discount_percent.HeaderText = "Giảm giá";
+            this.Discount_percent.Name = "Discount_percent";
+            this.Discount_percent.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Trạng thái";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Category_id
+            // 
+            this.Category_id.DataPropertyName = "Category_id";
+            this.Category_id.HeaderText = "Danh mục";
+            this.Category_id.Name = "Category_id";
+            this.Category_id.ReadOnly = true;
+            // 
+            // Content
+            // 
+            this.Content.DataPropertyName = "Content";
+            this.Content.HeaderText = "Mô tả";
+            this.Content.Name = "Content";
+            this.Content.ReadOnly = true;
+            this.Content.Width = 200;
+            // 
+            // Date_created
+            // 
+            this.Date_created.DataPropertyName = "Date_created";
+            this.Date_created.FillWeight = 110F;
+            this.Date_created.HeaderText = "Ngày Tạo";
+            this.Date_created.Name = "Date_created";
+            this.Date_created.ReadOnly = true;
+            // 
+            // Date_edit
+            // 
+            this.Date_edit.DataPropertyName = "Date_edit";
+            this.Date_edit.FillWeight = 110F;
+            this.Date_edit.HeaderText = "Ngày sửa";
+            this.Date_edit.Name = "Date_edit";
+            this.Date_edit.ReadOnly = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -104,33 +264,34 @@ namespace ShopApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(44, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 27);
-            this.textBox1.TabIndex = 2;
+            this.txtSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(44, 28);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(291, 27);
+            this.txtSearch.TabIndex = 2;
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::ShopApp.Properties.Resources.icons8_search_24px_1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(371, 20);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.button1.Size = new System.Drawing.Size(119, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "     Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::ShopApp.Properties.Resources.icons8_search_24px_1;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(371, 20);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnSearch.Size = new System.Drawing.Size(119, 40);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "     Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel1
             // 
@@ -161,34 +322,331 @@ namespace ShopApp
             this.panel4.AutoScroll = true;
             this.panel4.AutoSize = true;
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.Controls.Add(this.textBox3);
+            this.panel4.Controls.Add(this.txtSalePrice);
+            this.panel4.Controls.Add(this.txtOriginPrice);
+            this.panel4.Controls.Add(this.cbCategory);
+            this.panel4.Controls.Add(this.cbStatus);
+            this.panel4.Controls.Add(this.lbQuantityError);
+            this.panel4.Controls.Add(this.txtQuantity);
+            this.panel4.Controls.Add(this.txtBrand);
+            this.panel4.Controls.Add(this.btnAddImage);
+            this.panel4.Controls.Add(this.ptbAvatar);
+            this.panel4.Controls.Add(this.lbOriginPriceError);
+            this.panel4.Controls.Add(this.label17);
+            this.panel4.Controls.Add(this.lbStatusError);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.lbSalePriceError);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.lbCategoryError);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.lbBrandError);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.lbNameError);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.txtName);
+            this.panel4.Controls.Add(this.lbContentError);
+            this.panel4.Controls.Add(this.lbImageError);
+            this.panel4.Controls.Add(this.txtContent);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.lbId);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.textBox2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 23);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(294, 312);
+            this.panel4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.panel4.Size = new System.Drawing.Size(294, 280);
             this.panel4.TabIndex = 2;
             // 
-            // textBox3
+            // txtSalePrice
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSalePrice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(88, 145);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 50);
-            this.textBox3.TabIndex = 10;
+            this.txtSalePrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalePrice.Location = new System.Drawing.Point(87, 530);
+            this.txtSalePrice.Name = "txtSalePrice";
+            this.txtSalePrice.Size = new System.Drawing.Size(165, 27);
+            this.txtSalePrice.TabIndex = 49;
+            // 
+            // txtOriginPrice
+            // 
+            this.txtOriginPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOriginPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOriginPrice.Location = new System.Drawing.Point(87, 466);
+            this.txtOriginPrice.Name = "txtOriginPrice";
+            this.txtOriginPrice.Size = new System.Drawing.Size(165, 27);
+            this.txtOriginPrice.TabIndex = 48;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(88, 596);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(165, 27);
+            this.cbCategory.TabIndex = 47;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
+            "Còn hàng",
+            "Hết hàng"});
+            this.cbStatus.Location = new System.Drawing.Point(88, 657);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(165, 27);
+            this.cbStatus.TabIndex = 46;
+            // 
+            // lbQuantityError
+            // 
+            this.lbQuantityError.AutoSize = true;
+            this.lbQuantityError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuantityError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbQuantityError.Location = new System.Drawing.Point(85, 436);
+            this.lbQuantityError.Name = "lbQuantityError";
+            this.lbQuantityError.Size = new System.Drawing.Size(16, 15);
+            this.lbQuantityError.TabIndex = 45;
+            this.lbQuantityError.Text = "...";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQuantity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(87, 406);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(165, 27);
+            this.txtQuantity.TabIndex = 44;
+            // 
+            // txtBrand
+            // 
+            this.txtBrand.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBrand.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrand.Location = new System.Drawing.Point(88, 348);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(165, 27);
+            this.txtBrand.TabIndex = 43;
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddImage.Location = new System.Drawing.Point(88, 238);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(95, 31);
+            this.btnAddImage.TabIndex = 35;
+            this.btnAddImage.Text = "Chọn ảnh";
+            this.btnAddImage.UseVisualStyleBackColor = false;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
+            // ptbAvatar
+            // 
+            this.ptbAvatar.Location = new System.Drawing.Point(88, 80);
+            this.ptbAvatar.Name = "ptbAvatar";
+            this.ptbAvatar.Size = new System.Drawing.Size(165, 123);
+            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAvatar.TabIndex = 34;
+            this.ptbAvatar.TabStop = false;
+            // 
+            // lbOriginPriceError
+            // 
+            this.lbOriginPriceError.AutoSize = true;
+            this.lbOriginPriceError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOriginPriceError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbOriginPriceError.Location = new System.Drawing.Point(85, 496);
+            this.lbOriginPriceError.Name = "lbOriginPriceError";
+            this.lbOriginPriceError.Size = new System.Drawing.Size(16, 15);
+            this.lbOriginPriceError.TabIndex = 33;
+            this.lbOriginPriceError.Text = "...";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(10, 469);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 19);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "Giá gốc:";
+            // 
+            // lbStatusError
+            // 
+            this.lbStatusError.AutoSize = true;
+            this.lbStatusError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatusError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbStatusError.Location = new System.Drawing.Point(85, 687);
+            this.lbStatusError.Name = "lbStatusError";
+            this.lbStatusError.Size = new System.Drawing.Size(16, 15);
+            this.lbStatusError.TabIndex = 30;
+            this.lbStatusError.Text = "...";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(10, 660);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(78, 19);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "Trạng thái:";
+            // 
+            // lbSalePriceError
+            // 
+            this.lbSalePriceError.AutoSize = true;
+            this.lbSalePriceError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSalePriceError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbSalePriceError.Location = new System.Drawing.Point(85, 560);
+            this.lbSalePriceError.Name = "lbSalePriceError";
+            this.lbSalePriceError.Size = new System.Drawing.Size(16, 15);
+            this.lbSalePriceError.TabIndex = 27;
+            this.lbSalePriceError.Text = "...";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(10, 533);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(63, 19);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Giá bán:";
+            // 
+            // lbCategoryError
+            // 
+            this.lbCategoryError.AutoSize = true;
+            this.lbCategoryError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCategoryError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbCategoryError.Location = new System.Drawing.Point(85, 626);
+            this.lbCategoryError.Name = "lbCategoryError";
+            this.lbCategoryError.Size = new System.Drawing.Size(16, 15);
+            this.lbCategoryError.TabIndex = 24;
+            this.lbCategoryError.Text = "...";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(10, 599);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 19);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Danh mục:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(10, 409);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 19);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Số lượng:";
+            // 
+            // lbBrandError
+            // 
+            this.lbBrandError.AutoSize = true;
+            this.lbBrandError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBrandError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbBrandError.Location = new System.Drawing.Point(85, 378);
+            this.lbBrandError.Name = "lbBrandError";
+            this.lbBrandError.Size = new System.Drawing.Size(16, 15);
+            this.lbBrandError.TabIndex = 18;
+            this.lbBrandError.Text = "...";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(10, 351);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 19);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Hãng:";
+            // 
+            // lbNameError
+            // 
+            this.lbNameError.AutoSize = true;
+            this.lbNameError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbNameError.Location = new System.Drawing.Point(85, 316);
+            this.lbNameError.Name = "lbNameError";
+            this.lbNameError.Size = new System.Drawing.Size(16, 15);
+            this.lbNameError.TabIndex = 15;
+            this.lbNameError.Text = "...";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(10, 289);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 19);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Tên:";
+            // 
+            // txtName
+            // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(88, 286);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(165, 27);
+            this.txtName.TabIndex = 13;
+            // 
+            // lbContentError
+            // 
+            this.lbContentError.AutoSize = true;
+            this.lbContentError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbContentError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbContentError.Location = new System.Drawing.Point(85, 772);
+            this.lbContentError.Name = "lbContentError";
+            this.lbContentError.Size = new System.Drawing.Size(16, 15);
+            this.lbContentError.TabIndex = 12;
+            this.lbContentError.Text = "...";
+            // 
+            // lbImageError
+            // 
+            this.lbImageError.AutoSize = true;
+            this.lbImageError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbImageError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbImageError.Location = new System.Drawing.Point(85, 206);
+            this.lbImageError.Name = "lbImageError";
+            this.lbImageError.Size = new System.Drawing.Size(16, 15);
+            this.lbImageError.TabIndex = 11;
+            this.lbImageError.Text = "...";
+            // 
+            // txtContent
+            // 
+            this.txtContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContent.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContent.Location = new System.Drawing.Point(88, 719);
+            this.txtContent.Multiline = true;
+            this.txtContent.Name = "txtContent";
+            this.txtContent.Size = new System.Drawing.Size(165, 50);
+            this.txtContent.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 148);
+            this.label4.Location = new System.Drawing.Point(10, 722);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 5;
@@ -200,19 +658,19 @@ namespace ShopApp
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(10, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 19);
+            this.label3.Size = new System.Drawing.Size(57, 19);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Tên:";
+            this.label3.Text = "Ảnh SP:";
             // 
-            // label2
+            // lbId
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(84, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "...";
+            this.lbId.AutoSize = true;
+            this.lbId.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbId.Location = new System.Drawing.Point(84, 26);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(21, 19);
+            this.lbId.TabIndex = 2;
+            this.lbId.Text = "...";
             // 
             // label1
             // 
@@ -224,90 +682,113 @@ namespace ShopApp
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã:";
             // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(88, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 27);
-            this.textBox2.TabIndex = 1;
-            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btnReset);
+            this.panel3.Controls.Add(this.btnAdd);
+            this.panel3.Controls.Add(this.btnExit);
+            this.panel3.Controls.Add(this.btnDelete);
+            this.panel3.Controls.Add(this.btnEdit);
+            this.panel3.Controls.Add(this.btnCreate);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 335);
+            this.panel3.Location = new System.Drawing.Point(3, 303);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(294, 154);
+            this.panel3.Size = new System.Drawing.Size(294, 186);
             this.panel3.TabIndex = 0;
             // 
-            // button5
+            // btnReset
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.button5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::ShopApp.Properties.Resources.icons8_exit_24px;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(151, 84);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.button5.Size = new System.Drawing.Size(119, 40);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "     Thoát";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.BackColor = System.Drawing.SystemColors.Control;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Image = global::ShopApp.Properties.Resources.icons8_reset_32px;
+            this.btnReset.Location = new System.Drawing.Point(230, 6);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(40, 40);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // button4
+            // btnAdd
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.button4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::ShopApp.Properties.Resources.icons8_delete_24px;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(23, 84);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.button4.Size = new System.Drawing.Size(119, 40);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "     Xóa";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::ShopApp.Properties.Resources.icons8_plus_math_32px;
+            this.btnAdd.Location = new System.Drawing.Point(171, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(40, 40);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button3
+            // btnExit
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.button3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::ShopApp.Properties.Resources.icons8_edit_24px;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(151, 24);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.button3.Size = new System.Drawing.Size(119, 40);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "     Sửa";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnExit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = global::ShopApp.Properties.Resources.icons8_exit_24px;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(151, 122);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnExit.Size = new System.Drawing.Size(119, 40);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "     Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::ShopApp.Properties.Resources.icons8_create_24px;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(23, 24);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.button2.Size = new System.Drawing.Size(119, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "     Thêm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnDelete.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::ShopApp.Properties.Resources.icons8_delete_24px;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(23, 122);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnDelete.Size = new System.Drawing.Size(119, 40);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "     Xóa";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Image = global::ShopApp.Properties.Resources.icons8_edit_24px;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(151, 62);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnEdit.Size = new System.Drawing.Size(119, 40);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "     Sửa";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnCreate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Image = global::ShopApp.Properties.Resources.icons8_create_24px;
+            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreate.Location = new System.Drawing.Point(23, 62);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnCreate.Size = new System.Drawing.Size(119, 40);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.Text = "     Lưu";
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // splitter1
             // 
@@ -317,6 +798,11 @@ namespace ShopApp
             this.splitter1.Size = new System.Drawing.Size(3, 492);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
+            // 
+            // ofdImage
+            // 
+            this.ofdImage.FileName = "openFileDialog1";
+            this.ofdImage.Filter = "Image files(*.ipg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
             // 
             // frmProducts
             // 
@@ -328,9 +814,10 @@ namespace ShopApp
             this.Controls.Add(this.panel1);
             this.Name = "frmProducts";
             this.Text = "frmProducts";
+            this.Load += new System.EventHandler(this.frmProducts_Load);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -338,6 +825,7 @@ namespace ShopApp
             this.groupBox3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -350,20 +838,60 @@ namespace ShopApp
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dgvProducts;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbId;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label lbContentError;
+        private System.Windows.Forms.Label lbImageError;
+        private System.Windows.Forms.Label lbOriginPriceError;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbStatusError;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbSalePriceError;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lbCategoryError;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbBrandError;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbNameError;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.OpenFileDialog ofdImage;
+        private System.Windows.Forms.Button btnAddImage;
+        public System.Windows.Forms.PictureBox ptbAvatar;
+        private System.Windows.Forms.TextBox txtBrand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewImageColumn Avatar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Names;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Brand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Origin_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sale_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount_percent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Content;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date_created;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date_edit;
+        private System.Windows.Forms.TextBox txtSalePrice;
+        private System.Windows.Forms.TextBox txtOriginPrice;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.Label lbQuantityError;
+        private System.Windows.Forms.TextBox txtQuantity;
     }
 }

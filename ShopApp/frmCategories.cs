@@ -20,6 +20,8 @@ namespace ShopApp
 
         private void frmCategories_Load(object sender, EventArgs e)
         {
+            ResetTextBox();
+            ResetError();
             EnabledButton(false);
             EnabledTextBox(false);
             LoadDataGridView();
