@@ -214,7 +214,7 @@ namespace ShopApp
 
             if (!int.TryParse(txtSalePrice.Text.Trim(), out int k))
             {
-                lbSalePriceError.Text = "Giá bán được chứa kí tự!";
+                lbSalePriceError.Text = "Giá bán không được chứa kí tự!";
                 return;
             }
             else
@@ -371,7 +371,7 @@ namespace ShopApp
 
             if (!int.TryParse(txtSalePrice.Text.Trim(), out int k))
             {
-                lbSalePriceError.Text = "Giá bán được chứa kí tự!";
+                lbSalePriceError.Text = "Giá bán không được chứa kí tự!";
                 return;
             }
             else
@@ -481,36 +481,26 @@ namespace ShopApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //string searchId = "", searchEmail = "", searchPhone = "";
+            string searchId = "";
 
-            //SqlCommand cmd = Code.Functions.RunProcedure("SearchUsers");
-            //if (Code.Functions.IsPhoneNumber(txtSearch.Text.Trim()))
-            //{
-            //    searchPhone = txtSearch.Text;
-            //}
-            //else if (Code.Functions.IsValidEmail(txtSearch.Text.Trim()))
-            //{
-            //    searchEmail = txtSearch.Text;
-            //}
-            //else if (int.TryParse(txtSearch.Text, out int i))
-            //{
-            //    searchId = txtSearch.Text;
-            //}
-            //cmd.Parameters.Add(new SqlParameter("@Id", searchId));
-            //cmd.Parameters.Add(new SqlParameter("@Name", txtSearch.Text));
-            //cmd.Parameters.Add(new SqlParameter("@Email", searchEmail));
-            //cmd.Parameters.Add(new SqlParameter("@Phone", searchPhone));
+            SqlCommand cmd = Code.Functions.RunProcedure("SearchProducts");
+            if (int.TryParse(txtSearch.Text, out int i))
+            {
+                searchId = txtSearch.Text;
+            }
+            cmd.Parameters.Add(new SqlParameter("@Id", searchId));
+            cmd.Parameters.Add(new SqlParameter("@Name", txtSearch.Text));
 
-            //cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
 
-            //DataTable dt = new DataTable();
+            DataTable dt = new DataTable();
 
-            //SqlDataAdapter dap = new SqlDataAdapter(cmd);
+            SqlDataAdapter dap = new SqlDataAdapter(cmd);
 
-            //dap.Fill(dt);
-            //dgvProducts.AutoGenerateColumns = false;
-            //dgvProducts.DataSource = dt;
-            //dgvProducts.Refresh();
+            dap.Fill(dt);
+            dgvProducts.AutoGenerateColumns = false;
+            dgvProducts.DataSource = dt;
+            dgvProducts.Refresh();
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
