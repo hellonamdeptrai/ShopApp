@@ -262,6 +262,9 @@ namespace ShopApp
             cmd.Parameters.Add(new SqlParameter("@Customer_id", lbIdUser.Text));
             cmd.Parameters.Add(new SqlParameter("@Money", lbSumMoney.Text));
             cmd.Parameters.Add(new SqlParameter("@Personnel_id", 1));
+            cmd.Parameters.Add(new SqlParameter("@Day", DateTime.Now.Date.ToString("dd")));
+            cmd.Parameters.Add(new SqlParameter("@Month", DateTime.Now.Date.ToString("MM")));
+            cmd.Parameters.Add(new SqlParameter("@Year", DateTime.Now.Date.ToString("yyyy")));
             cmd.Parameters.Add(new SqlParameter("@Date_created", DateTime.Now.Date.ToString("MM/dd/yyyy")));
 
             cmd.ExecuteNonQuery();
