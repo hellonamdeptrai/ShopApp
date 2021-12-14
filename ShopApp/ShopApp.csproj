@@ -88,6 +88,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Analytic.cs" />
     <Compile Include="Code\ComboboxItem.cs" />
     <Compile Include="Code\Functions.cs" />
     <Compile Include="Code\Product.cs" />
@@ -114,6 +115,12 @@
     </Compile>
     <Compile Include="frmDefault.Designer.cs">
       <DependentUpon>frmDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetailOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetailOrder.Designer.cs">
+      <DependentUpon>frmDetailOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
@@ -158,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDefault.resx">
       <DependentUpon>frmDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetailOrder.resx">
+      <DependentUpon>frmDetailOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -257,6 +267,7 @@
     <None Include="Resources\icons8_reset_32px.png" />
     <None Include="Resources\icons8_plus_math_32px.png" />
     <None Include="Resources\icons8_camera_addon_identification_24px.png" />
+    <None Include="Resources\icons8_print_24px.png" />
     <Content Include="ShopDatabase.mdf" />
     <Content Include="ShopDatabase_log.ldf">
       <DependentUpon>ShopDatabase.mdf</DependentUpon>

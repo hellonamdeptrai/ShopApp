@@ -69,6 +69,7 @@ namespace ShopApp
         private void frmPayment_Load(object sender, EventArgs e)
         {
             lbPaymentError.Text = "";
+            txtPayment.Focus();
         }
     }
 }

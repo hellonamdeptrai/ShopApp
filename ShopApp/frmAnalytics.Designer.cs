@@ -31,23 +31,31 @@ namespace ShopApp
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbMonthError = new System.Windows.Forms.Label();
+            this.lbYearError = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbYear = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbMonth = new System.Windows.Forms.ComboBox();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Personnel_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_created = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -68,7 +76,7 @@ namespace ShopApp
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvOrders);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 12F);
             this.groupBox2.Location = new System.Drawing.Point(0, 80);
@@ -78,19 +86,30 @@ namespace ShopApp
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách hóa đơn";
             // 
-            // dataGridView1
+            // dgvOrders
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(354, 386);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvOrders.AllowUserToAddRows = false;
+            this.dgvOrders.AllowUserToDeleteRows = false;
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Customer_id,
+            this.Personnel_id,
+            this.Money,
+            this.Date_created,
+            this.Detail});
+            this.dgvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrders.Location = new System.Drawing.Point(3, 23);
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.ReadOnly = true;
+            this.dgvOrders.Size = new System.Drawing.Size(354, 386);
+            this.dgvOrders.TabIndex = 0;
+            this.dgvOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellContentClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -100,33 +119,16 @@ namespace ShopApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm hóa đơn";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(44, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 27);
-            this.textBox1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::ShopApp.Properties.Resources.icons8_search_24px_1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(198, 20);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.button1.Size = new System.Drawing.Size(119, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "     Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.txtSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(44, 28);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(118, 27);
+            this.txtSearch.TabIndex = 2;
             // 
             // splitter1
             // 
@@ -163,22 +165,85 @@ namespace ShopApp
             this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cartesianChart1.Location = new System.Drawing.Point(3, 23);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(464, 356);
+            this.cartesianChart1.Size = new System.Drawing.Size(464, 323);
             this.cartesianChart1.TabIndex = 2;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lbMonthError);
+            this.panel3.Controls.Add(this.lbYearError);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.cbYear);
             this.panel3.Controls.Add(this.btnFilter);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.cbMonth);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 379);
+            this.panel3.Location = new System.Drawing.Point(3, 346);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(464, 110);
+            this.panel3.Size = new System.Drawing.Size(464, 143);
             this.panel3.TabIndex = 1;
+            // 
+            // lbMonthError
+            // 
+            this.lbMonthError.AutoSize = true;
+            this.lbMonthError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMonthError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbMonthError.Location = new System.Drawing.Point(75, 109);
+            this.lbMonthError.Name = "lbMonthError";
+            this.lbMonthError.Size = new System.Drawing.Size(16, 15);
+            this.lbMonthError.TabIndex = 14;
+            this.lbMonthError.Text = "...";
+            // 
+            // lbYearError
+            // 
+            this.lbYearError.AutoSize = true;
+            this.lbYearError.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYearError.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbYearError.Location = new System.Drawing.Point(75, 46);
+            this.lbYearError.Name = "lbYearError";
+            this.lbYearError.Size = new System.Drawing.Size(16, 15);
+            this.lbYearError.TabIndex = 13;
+            this.lbYearError.Text = "...";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 19);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Năm:";
+            // 
+            // cbYear
+            // 
+            this.cbYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.Location = new System.Drawing.Point(78, 16);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.Size = new System.Drawing.Size(222, 27);
+            this.cbYear.TabIndex = 11;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 19);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Tháng:";
+            // 
+            // cbMonth
+            // 
+            this.cbMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMonth.FormattingEnabled = true;
+            this.cbMonth.Location = new System.Drawing.Point(78, 79);
+            this.cbMonth.Name = "cbMonth";
+            this.cbMonth.Size = new System.Drawing.Size(222, 27);
+            this.cbMonth.TabIndex = 8;
             // 
             // btnFilter
             // 
@@ -189,50 +254,80 @@ namespace ShopApp
             this.btnFilter.ForeColor = System.Drawing.Color.White;
             this.btnFilter.Image = global::ShopApp.Properties.Resources.icons8_filter_24px;
             this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.Location = new System.Drawing.Point(336, 52);
+            this.btnFilter.Location = new System.Drawing.Point(330, 66);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnFilter.Size = new System.Drawing.Size(119, 40);
-            this.btnFilter.TabIndex = 5;
+            this.btnFilter.TabIndex = 10;
             this.btnFilter.Text = "     Lọc";
             this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // label1
+            // btnSearch
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Tháng:";
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::ShopApp.Properties.Resources.icons8_search_24px_1;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(198, 20);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnSearch.Size = new System.Drawing.Size(119, 40);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "     Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // comboBox1
+            // Id
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(84, 65);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(222, 27);
-            this.comboBox1.TabIndex = 3;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Mã hóa đơn";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 200;
             // 
-            // label2
+            // Customer_id
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 19);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Năm:";
+            this.Customer_id.DataPropertyName = "Customer_id";
+            this.Customer_id.HeaderText = "Mã khách hàng";
+            this.Customer_id.Name = "Customer_id";
+            this.Customer_id.ReadOnly = true;
+            this.Customer_id.Width = 140;
             // 
-            // comboBox2
+            // Personnel_id
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(84, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(222, 27);
-            this.comboBox2.TabIndex = 6;
+            this.Personnel_id.DataPropertyName = "Personnel_id";
+            this.Personnel_id.HeaderText = "Mã nhân viên";
+            this.Personnel_id.Name = "Personnel_id";
+            this.Personnel_id.ReadOnly = true;
+            this.Personnel_id.Width = 140;
+            // 
+            // Money
+            // 
+            this.Money.DataPropertyName = "Money";
+            this.Money.HeaderText = "Tổng tiền";
+            this.Money.Name = "Money";
+            this.Money.ReadOnly = true;
+            this.Money.Width = 200;
+            // 
+            // Date_created
+            // 
+            this.Date_created.DataPropertyName = "Date_created";
+            this.Date_created.HeaderText = "Ngày bán";
+            this.Date_created.Name = "Date_created";
+            this.Date_created.ReadOnly = true;
+            this.Date_created.Width = 120;
+            // 
+            // Detail
+            // 
+            this.Detail.HeaderText = "Chi tiết";
+            this.Detail.Name = "Detail";
+            this.Detail.ReadOnly = true;
+            this.Detail.Text = "Chi tiết";
+            this.Detail.UseColumnTextForButtonValue = true;
             // 
             // frmAnalytics
             // 
@@ -247,7 +342,7 @@ namespace ShopApp
             this.Load += new System.EventHandler(this.frmAnalytics_Load);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -263,17 +358,25 @@ namespace ShopApp
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dgvOrders;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox3;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbYear;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbMonth;
+        private System.Windows.Forms.Label lbMonthError;
+        private System.Windows.Forms.Label lbYearError;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Personnel_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Money;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date_created;
+        private System.Windows.Forms.DataGridViewButtonColumn Detail;
     }
 }

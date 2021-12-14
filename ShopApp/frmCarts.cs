@@ -19,6 +19,10 @@ namespace ShopApp
             InitializeComponent();
         }
 
+        string userID = "1";
+
+        List<Product> quantiyEdit = new List<Product>();
+
         private void LoadDataGridView(string name, DataGridView table)
         {
             DataTable dt = Functions.GetData(name);
@@ -31,6 +35,15 @@ namespace ShopApp
         {
             LoadDataGridView("GetUsers", dgvUsers);
             LoadDataGridView("GetProducts", dgvProducts);
+            for (int i = 0; i < dgvProducts.RowCount; i++)
+            {
+                DataGridViewRow dgvRow = dgvProducts.Rows[i];
+                Product pr = new Product();
+                pr.Id = dgvRow.Cells["Idp"].Value.ToString();
+                pr.Quantity = dgvRow.Cells["Quantity"].Value.ToString();
+
+                quantiyEdit.Add(pr);
+            }
         }
 
         private void btnSearchUsers_Click(object sender, EventArgs e)
@@ -98,8 +111,8 @@ namespace ShopApp
                 DataGridViewRow dgvRow = dgvUsers.Rows[e.RowIndex];
                 lbIdUser.Text = dgvRow.Cells["Id"].Value.ToString();
                 lbNameUser.Text = dgvRow.Cells["Names"].Value.ToString();
-                lbPhoneUser.Text = dgvRow.Cells["Email"].Value.ToString();
-                lbEmailUser.Text = dgvRow.Cells["Phone"].Value.ToString();
+                lbPhoneUser.Text = dgvRow.Cells["Phone"].Value.ToString();
+                lbEmailUser.Text = dgvRow.Cells["Email"].Value.ToString();
                 lbAddressUser.Text = dgvRow.Cells["Address"].Value.ToString();
             }
         }
@@ -254,20 +267,21 @@ namespace ShopApp
                 return;
             }
 
-            string idOrder = "ID" + DateTime.Now.Date.ToString("yyyyMMddHHmmss");
+            string idOrder = "ID" + DateTime.Now.ToString("yyMMddHHmmssff");
 
             SqlCommand cmd = Functions.RunProcedure("CreateOrders");
 
             cmd.Parameters.Add(new SqlParameter("@Id", idOrder));
             cmd.Parameters.Add(new SqlParameter("@Customer_id", lbIdUser.Text));
             cmd.Parameters.Add(new SqlParameter("@Money", lbSumMoney.Text));
-            cmd.Parameters.Add(new SqlParameter("@Personnel_id", 1));
+            cmd.Parameters.Add(new SqlParameter("@Personnel_id", userID));
             cmd.Parameters.Add(new SqlParameter("@Day", DateTime.Now.Date.ToString("dd")));
             cmd.Parameters.Add(new SqlParameter("@Month", DateTime.Now.Date.ToString("MM")));
             cmd.Parameters.Add(new SqlParameter("@Year", DateTime.Now.Date.ToString("yyyy")));
             cmd.Parameters.Add(new SqlParameter("@Date_created", DateTime.Now.Date.ToString("MM/dd/yyyy")));
 
             cmd.ExecuteNonQuery();
+            cmd.Cancel();
 
             foreach (DataGridViewRow row in dgvCarts.Rows)
             {
@@ -280,8 +294,28 @@ namespace ShopApp
                 cmdo.Parameters.Add(new SqlParameter("@Date_created", DateTime.Now.Date.ToString("MM/dd/yyyy")));
 
                 cmdo.ExecuteNonQuery();
-            }
+                cmdo.Cancel();
 
+                for (int i = 0; i < quantiyEdit.Count; i++)
+                {
+                    if (quantiyEdit[i].Id.Equals(row.Cells["idDataGridViewTextBoxColumn"].Value))
+                    {
+                        int qt = int.Parse(quantiyEdit[i].Quantity) - int.Parse(row.Cells["quantityDataGridViewTextBoxColumn"].Value.ToString());
+                        SqlCommand cmdp = Functions.RunProcedure("UpdateQuantityProducts");
+
+                        cmdp.Parameters.Add(new SqlParameter("@Id", row.Cells["idDataGridViewTextBoxColumn"].Value));
+                        cmdp.Parameters.Add(new SqlParameter("@Quantity", qt));
+                        cmdp.Parameters.Add(new SqlParameter("@Date_edit", DateTime.Now.Date.ToString("MM/dd/yyyy")));
+
+                        cmdp.ExecuteNonQuery();
+                        cmdp.Cancel();
+                    }
+                }
+            }
+            LoadDataGridView("GetProducts", dgvProducts);
+            frmDetailOrder frmDO = new frmDetailOrder();
+            frmDO.DataFormChill(idOrder, userID, lbIdUser.Text, lbSumMoney.Text);
+            frmDO.ShowDialog();
             ResetOrders();
         }
     }

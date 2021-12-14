@@ -58,7 +58,7 @@ namespace ShopApp.Code
             SqlDataAdapter dap = new SqlDataAdapter(cmd);
 
             dap.Fill(dt);
-
+            cmd.Cancel();
             return dt;
         }
 
