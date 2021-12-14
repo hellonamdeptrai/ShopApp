@@ -19,7 +19,7 @@ namespace ShopApp
             InitializeComponent();
         }
 
-        string userID = "1";
+        string userID = frmLogin.idLogin;
 
         List<Product> quantiyEdit = new List<Product>();
 
@@ -33,7 +33,7 @@ namespace ShopApp
 
         private void frmCarts_Load(object sender, EventArgs e)
         {
-            LoadDataGridView("GetUsers", dgvUsers);
+            LoadDataGridView("GetCustomerUsers", dgvUsers);
             LoadDataGridView("GetProducts", dgvProducts);
             for (int i = 0; i < dgvProducts.RowCount; i++)
             {

@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AForge.Video;
-using AForge.Video.DirectShow;
 
 namespace ShopApp
 {
@@ -18,35 +17,30 @@ namespace ShopApp
         {
             InitializeComponent();
         }
-
-        FilterInfoCollection fic;
-        VideoCaptureDevice vcd;
-
         private void frmDefault_Load(object sender, EventArgs e)
         {
-            fic = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo fi in fic)
-                cboCamera.Items.Add(fi.Name);
-            cboCamera.SelectedIndex = 0;
-            vcd = new VideoCaptureDevice();
-        }
+            lbName.Text = frmLogin.nameLogin;
+            SqlCommand cmd = Code.Functions.RunProcedure("CountOrders");
+            cmd.ExecuteNonQuery();
+            SqlDataReader data = cmd.ExecuteReader();
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            vcd = new VideoCaptureDevice(fic[cboCamera.SelectedIndex].MonikerString);
-            vcd.NewFrame += Vcd_NewFrame;
-            vcd.Start();
-        }
+            if (data.Read())
+            {
+                lbOrder.Text = data[0].ToString();
+            }
+            cmd.Cancel();
+            data.Close();
 
-        private void Vcd_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            pictureBox.Image = (Bitmap)eventArgs.Frame.Clone();
-        }
+            SqlCommand cmdc = Code.Functions.RunProcedure("SumOrders");
+            cmdc.ExecuteNonQuery();
+            SqlDataReader datac = cmdc.ExecuteReader();
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (vcd.IsRunning)
-                vcd.Stop();
+            if (datac.Read())
+            {
+                lbMoney.Text = datac[0].ToString();
+            }
+            cmdc.Cancel();
+            datac.Close();
         }
     }
 }

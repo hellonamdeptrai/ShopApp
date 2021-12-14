@@ -61,6 +61,10 @@ namespace ShopApp
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            if (frmLogin.positionLogin.Equals("2"))
+            {
+                btnCategories.Enabled = false;
+            }
             Code.Functions.Connect();
             OpenChildForm(new frmDefault(), sender);
         }
@@ -71,10 +75,6 @@ namespace ShopApp
             if (dialogResult == DialogResult.No)
             {
                 e.Cancel = true;
-            }
-            else 
-            {
-                Code.Functions.Disconnect();
             }
         }
     }

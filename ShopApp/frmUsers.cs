@@ -38,10 +38,20 @@ namespace ShopApp
 
         private void LoadDataGridView()
         {
-            DataTable dt = Code.Functions.GetData("GetUsers");
-            dgvUsers.AutoGenerateColumns = false;
-            dgvUsers.DataSource = dt;
-            dgvUsers.Refresh();
+            if (frmLogin.positionLogin.Equals("1"))
+            {
+                DataTable dt = Code.Functions.GetData("GetUsers");
+                dgvUsers.AutoGenerateColumns = false;
+                dgvUsers.DataSource = dt;
+                dgvUsers.Refresh();
+            }
+            else
+            {
+                DataTable dt = Code.Functions.GetData("GetCustomerUsers");
+                dgvUsers.AutoGenerateColumns = false;
+                dgvUsers.DataSource = dt;
+                dgvUsers.Refresh();
+            }
         }
 
         private void EnabledButton(bool status)
@@ -106,13 +116,18 @@ namespace ShopApp
                 dtBirth.Text = dgvRow.Cells["Birth_date"].Value.ToString();
                 txtPhone.Text = dgvRow.Cells["Phone"].Value.ToString();
                 cbbStatus.Text = dgvRow.Cells["Status"].Value.ToString() == "1" ? "Mở" : "Khóa";
-                cbbPosition.Text = dgvRow.Cells["Position"].Value.ToString() == "1" ? "Admin" : "Nhân viên";
+                if (frmLogin.positionLogin.Equals("1"))
+                    cbbPosition.Text = dgvRow.Cells["Position"].Value.ToString() == "1" ? "Admin" : "Nhân viên";
                 txtAddress.Text = dgvRow.Cells["Address"].Value.ToString();
                 EnabledTextBox(true);
                 btnAdd.Enabled = false;
                 btnCreate.Enabled = false;
                 btnEdit.Enabled = true;
                 btnDelete.Enabled = true;
+                if (frmLogin.positionLogin.Equals("2"))
+                {
+                    cbbPosition.Enabled = false;
+                }
             }
         }
 
@@ -179,15 +194,17 @@ namespace ShopApp
             {
                 lbStatusError.Text = "";
             }
-
-            if (cbbPosition.SelectedIndex <= -1)
+            if (frmLogin.positionLogin.Equals("1"))
             {
-                lbPositionError.Text = "Chức vụ không được để trống!";
-                return;
-            }
-            else
-            {
-                lbPositionError.Text = "";
+                if (cbbPosition.SelectedIndex <= -1)
+                {
+                    lbPositionError.Text = "Chức vụ không được để trống!";
+                    return;
+                }
+                else
+                {
+                    lbPositionError.Text = "";
+                }
             }
 
             if (txtPhone.Text.Trim().Equals(""))
@@ -245,9 +262,16 @@ namespace ShopApp
                 status = 2;
             }
 
-            if (cbbPosition.SelectedItem.Equals("Nhân viên"))
+            if (frmLogin.positionLogin.Equals("1"))
             {
-                position = 2;
+                if (cbbPosition.SelectedItem.Equals("Nhân viên"))
+                {
+                    position = 2;
+                }
+            }
+            else
+            {
+                position = 3;
             }
             SqlCommand cmd = Code.Functions.RunProcedure("CreateUsers");
 
@@ -268,6 +292,10 @@ namespace ShopApp
             ResetTextBox();
             EnabledButton(false);
             EnabledTextBox(false);
+            if (frmLogin.positionLogin.Equals("2"))
+            {
+                cbbPosition.Enabled = false;
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -324,14 +352,17 @@ namespace ShopApp
                 lbStatusError.Text = "";
             }
 
-            if (cbbPosition.SelectedIndex <= -1)
+            if (frmLogin.positionLogin.Equals("1"))
             {
-                lbPositionError.Text = "Chức vụ không được để trống!";
-                return;
-            }
-            else
-            {
-                lbPositionError.Text = "";
+                if (cbbPosition.SelectedIndex <= -1)
+                {
+                    lbPositionError.Text = "Chức vụ không được để trống!";
+                    return;
+                }
+                else
+                {
+                    lbPositionError.Text = "";
+                }
             }
 
             if (txtPhone.Text.Trim().Equals(""))
@@ -379,9 +410,16 @@ namespace ShopApp
                 status = 2;
             }
 
-            if (cbbPosition.SelectedItem.Equals("Nhân viên"))
+            if (frmLogin.positionLogin.Equals("1"))
             {
-                position = 2;
+                if (cbbPosition.SelectedItem.Equals("Nhân viên"))
+                {
+                    position = 2;
+                }
+            }
+            else
+            {
+                position = 3;
             }
             SqlCommand cmd = Code.Functions.RunProcedure("UpdateUsers");
 
@@ -402,6 +440,10 @@ namespace ShopApp
             ResetTextBox();
             EnabledButton(false);
             EnabledTextBox(false);
+            if (frmLogin.positionLogin.Equals("2"))
+            {
+                cbbPosition.Enabled = false;
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -430,6 +472,10 @@ namespace ShopApp
         {
             EnabledTextBox(true);
             btnCreate.Enabled = true;
+            if (frmLogin.positionLogin.Equals("2"))
+            {
+                cbbPosition.Enabled = false;
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)

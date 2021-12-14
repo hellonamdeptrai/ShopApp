@@ -272,7 +272,7 @@ namespace ShopApp
             cmd.Parameters.Add(new SqlParameter("@Sale_price", txtSalePrice.Text));
             cmd.Parameters.Add(new SqlParameter("@Discount_percent", discount));
             cmd.Parameters.Add(new SqlParameter("@Content", txtContent.Text));
-            cmd.Parameters.Add(new SqlParameter("@User_id", 1));
+            cmd.Parameters.Add(new SqlParameter("@User_id", frmLogin.idLogin));
             cmd.Parameters.Add(new SqlParameter("@Category_id", Int32.Parse((cbCategory.SelectedItem as ComboboxItem).Value.ToString())));
             cmd.Parameters.Add(new SqlParameter("@Status", status));
             cmd.Parameters.Add(new SqlParameter("@Date_created", DateTime.Now.Date.ToString("MM/dd/yyyy")));
@@ -430,7 +430,7 @@ namespace ShopApp
             cmd.Parameters.Add(new SqlParameter("@Sale_price", txtSalePrice.Text));
             cmd.Parameters.Add(new SqlParameter("@Discount_percent", discount));
             cmd.Parameters.Add(new SqlParameter("@Content", txtContent.Text));
-            cmd.Parameters.Add(new SqlParameter("@User_id", 1));
+            cmd.Parameters.Add(new SqlParameter("@User_id", frmLogin.idLogin));
             cmd.Parameters.Add(new SqlParameter("@Category_id", Int32.Parse((cbCategory.SelectedItem as ComboboxItem).Value.ToString())));
             cmd.Parameters.Add(new SqlParameter("@Status", status));
             cmd.Parameters.Add(new SqlParameter("@Date_edit", DateTime.Now.Date.ToString("MM/dd/yyyy")));

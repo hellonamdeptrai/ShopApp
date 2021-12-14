@@ -29,69 +29,146 @@ namespace ShopApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.cboCamera = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbMoney = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbOrder = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox
+            // label1
             // 
-            this.pictureBox.Location = new System.Drawing.Point(85, 52);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(497, 343);
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(53, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 59);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Xin chào:";
             // 
-            // cboCamera
+            // lbName
             // 
-            this.cboCamera.FormattingEnabled = true;
-            this.cboCamera.Location = new System.Drawing.Point(207, 12);
-            this.cboCamera.Name = "cboCamera";
-            this.cboCamera.Size = new System.Drawing.Size(245, 21);
-            this.cboCamera.TabIndex = 1;
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.lbName.Location = new System.Drawing.Point(321, 55);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(64, 59);
+            this.lbName.TabIndex = 3;
+            this.lbName.Text = "...";
             // 
-            // button1
+            // label2
             // 
-            this.button1.Location = new System.Drawing.Point(554, 418);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Mở camera";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(80, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(222, 39);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tổng doanh thu";
             // 
-            // button2
+            // panel1
             // 
-            this.button2.Location = new System.Drawing.Point(463, 418);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Đóng";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panel1.Controls.Add(this.lbMoney);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(22, 245);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(383, 208);
+            this.panel1.TabIndex = 6;
+            // 
+            // lbMoney
+            // 
+            this.lbMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMoney.AutoSize = true;
+            this.lbMoney.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMoney.ForeColor = System.Drawing.Color.White;
+            this.lbMoney.Location = new System.Drawing.Point(80, 85);
+            this.lbMoney.Name = "lbMoney";
+            this.lbMoney.Size = new System.Drawing.Size(44, 39);
+            this.lbMoney.TabIndex = 5;
+            this.lbMoney.Text = "...";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panel2.Controls.Add(this.lbOrder);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(424, 245);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(383, 208);
+            this.panel2.TabIndex = 7;
+            // 
+            // lbOrder
+            // 
+            this.lbOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbOrder.AutoSize = true;
+            this.lbOrder.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOrder.ForeColor = System.Drawing.Color.White;
+            this.lbOrder.Location = new System.Drawing.Point(80, 85);
+            this.lbOrder.Name = "lbOrder";
+            this.lbOrder.Size = new System.Drawing.Size(44, 39);
+            this.lbOrder.TabIndex = 5;
+            this.lbOrder.Text = "...";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(80, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(213, 39);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Tổng đơn hàng";
             // 
             // frmDefault
             // 
-            this.ClientSize = new System.Drawing.Size(681, 457);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.cboCamera);
-            this.Controls.Add(this.pictureBox);
+            this.ClientSize = new System.Drawing.Size(833, 492);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lbName);
+            this.Controls.Add(this.label1);
             this.Name = "frmDefault";
             this.Text = "frmDefault";
             this.Load += new System.EventHandler(this.frmDefault_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.ComboBox cboCamera;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbMoney;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbOrder;
+        private System.Windows.Forms.Label label6;
     }
 }
