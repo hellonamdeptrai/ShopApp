@@ -33,6 +33,13 @@ namespace ShopApp
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvOrderProduct = new System.Windows.Forms.DataGridView();
+            this.Id_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sale_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Totals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_created = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbAddressUser = new System.Windows.Forms.Label();
             this.lbPhoneUser = new System.Windows.Forms.Label();
@@ -45,26 +52,19 @@ namespace ShopApp
             this.lbIdUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.lbPersonelName = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbSumMoney = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvOrderProduct = new System.Windows.Forms.DataGridView();
-            this.lbPersonelId = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnSearchUsers = new System.Windows.Forms.Button();
-            this.Id_product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Totals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sale_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_created = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.panel9.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter3
@@ -72,7 +72,7 @@ namespace ShopApp
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(3, 190);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(794, 3);
+            this.splitter3.Size = new System.Drawing.Size(891, 3);
             this.splitter3.TabIndex = 3;
             this.splitter3.TabStop = false;
             // 
@@ -86,7 +86,7 @@ namespace ShopApp
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 12F);
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(800, 538);
+            this.groupBox3.Size = new System.Drawing.Size(897, 522);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết đơn hàng";
@@ -97,7 +97,7 @@ namespace ShopApp
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 193);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(794, 215);
+            this.panel9.Size = new System.Drawing.Size(891, 199);
             this.panel9.TabIndex = 4;
             // 
             // groupBox4
@@ -106,10 +106,73 @@ namespace ShopApp
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(794, 215);
+            this.groupBox4.Size = new System.Drawing.Size(891, 199);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Giỏ hàng";
+            // 
+            // dgvOrderProduct
+            // 
+            this.dgvOrderProduct.AllowUserToAddRows = false;
+            this.dgvOrderProduct.AllowUserToDeleteRows = false;
+            this.dgvOrderProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_product,
+            this.Names,
+            this.Quantity,
+            this.Sale_price,
+            this.Totals,
+            this.Date_created});
+            this.dgvOrderProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrderProduct.Location = new System.Drawing.Point(3, 23);
+            this.dgvOrderProduct.Name = "dgvOrderProduct";
+            this.dgvOrderProduct.ReadOnly = true;
+            this.dgvOrderProduct.Size = new System.Drawing.Size(885, 173);
+            this.dgvOrderProduct.TabIndex = 0;
+            // 
+            // Id_product
+            // 
+            this.Id_product.DataPropertyName = "Id_product";
+            this.Id_product.HeaderText = "Mã sản phẩm";
+            this.Id_product.Name = "Id_product";
+            this.Id_product.ReadOnly = true;
+            this.Id_product.Width = 150;
+            // 
+            // Names
+            // 
+            this.Names.DataPropertyName = "Name";
+            this.Names.HeaderText = "Tên sản phẩm";
+            this.Names.Name = "Names";
+            this.Names.ReadOnly = true;
+            this.Names.Width = 150;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Số lượng";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Sale_price
+            // 
+            this.Sale_price.DataPropertyName = "Sale_price";
+            this.Sale_price.HeaderText = "Giá bán";
+            this.Sale_price.Name = "Sale_price";
+            this.Sale_price.ReadOnly = true;
+            // 
+            // Totals
+            // 
+            this.Totals.DataPropertyName = "Total";
+            this.Totals.HeaderText = "Tổng tiền";
+            this.Totals.Name = "Totals";
+            this.Totals.ReadOnly = true;
+            // 
+            // Date_created
+            // 
+            this.Date_created.DataPropertyName = "Date_created";
+            this.Date_created.HeaderText = "Ngày bán";
+            this.Date_created.Name = "Date_created";
+            this.Date_created.ReadOnly = true;
             // 
             // panel4
             // 
@@ -128,7 +191,7 @@ namespace ShopApp
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 23);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(794, 167);
+            this.panel4.Size = new System.Drawing.Size(891, 167);
             this.panel4.TabIndex = 2;
             // 
             // lbAddressUser
@@ -234,81 +297,63 @@ namespace ShopApp
             // panel3
             // 
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.btnSearchUsers);
-            this.panel3.Controls.Add(this.lbPersonelId);
+            this.panel3.Controls.Add(this.btnPrint);
+            this.panel3.Controls.Add(this.lbPersonelName);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.lbSumMoney);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 408);
+            this.panel3.Location = new System.Drawing.Point(3, 392);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(794, 127);
+            this.panel3.Size = new System.Drawing.Size(891, 127);
             this.panel3.TabIndex = 0;
             // 
-            // label6
+            // button2
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(752, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 19);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "VNĐ";
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::ShopApp.Properties.Resources.icons8_exit_24px;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(763, 78);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.button2.Size = new System.Drawing.Size(119, 40);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "     Đóng";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // lbSumMoney
+            // btnPrint
             // 
-            this.lbSumMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbSumMoney.AutoSize = true;
-            this.lbSumMoney.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSumMoney.ForeColor = System.Drawing.Color.Red;
-            this.lbSumMoney.Location = new System.Drawing.Point(629, 18);
-            this.lbSumMoney.Name = "lbSumMoney";
-            this.lbSumMoney.Size = new System.Drawing.Size(21, 19);
-            this.lbSumMoney.TabIndex = 9;
-            this.lbSumMoney.Text = "...";
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnPrint.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Image = global::ShopApp.Properties.Resources.icons8_print_24px;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(608, 78);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnPrint.Size = new System.Drawing.Size(139, 40);
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.Text = "     In hóa đơn";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // label5
+            // lbPersonelName
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(550, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 19);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Tổng tiền:";
-            // 
-            // dgvOrderProduct
-            // 
-            this.dgvOrderProduct.AllowUserToAddRows = false;
-            this.dgvOrderProduct.AllowUserToDeleteRows = false;
-            this.dgvOrderProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_product,
-            this.Names,
-            this.Quantity,
-            this.Totals,
-            this.Sale_price,
-            this.Date_created});
-            this.dgvOrderProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrderProduct.Location = new System.Drawing.Point(3, 23);
-            this.dgvOrderProduct.Name = "dgvOrderProduct";
-            this.dgvOrderProduct.ReadOnly = true;
-            this.dgvOrderProduct.Size = new System.Drawing.Size(788, 189);
-            this.dgvOrderProduct.TabIndex = 0;
-            // 
-            // lbPersonelId
-            // 
-            this.lbPersonelId.AutoSize = true;
-            this.lbPersonelId.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPersonelId.Location = new System.Drawing.Point(117, 18);
-            this.lbPersonelId.Name = "lbPersonelId";
-            this.lbPersonelId.Size = new System.Drawing.Size(21, 19);
-            this.lbPersonelId.TabIndex = 12;
-            this.lbPersonelId.Text = "...";
+            this.lbPersonelName.AutoSize = true;
+            this.lbPersonelName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPersonelName.Location = new System.Drawing.Point(117, 18);
+            this.lbPersonelName.Name = "lbPersonelName";
+            this.lbPersonelName.Size = new System.Drawing.Size(21, 19);
+            this.lbPersonelName.TabIndex = 12;
+            this.lbPersonelName.Text = "...";
             // 
             // label7
             // 
@@ -320,91 +365,46 @@ namespace ShopApp
             this.label7.TabIndex = 11;
             this.label7.Text = "Mã nhân viên:";
             // 
-            // button2
+            // label6
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::ShopApp.Properties.Resources.icons8_exit_24px;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(666, 78);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.button2.Size = new System.Drawing.Size(119, 40);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "     Đóng";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(849, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 19);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "VNĐ";
             // 
-            // btnSearchUsers
+            // lbSumMoney
             // 
-            this.btnSearchUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnSearchUsers.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchUsers.ForeColor = System.Drawing.Color.White;
-            this.btnSearchUsers.Image = global::ShopApp.Properties.Resources.icons8_print_24px;
-            this.btnSearchUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchUsers.Location = new System.Drawing.Point(511, 78);
-            this.btnSearchUsers.Name = "btnSearchUsers";
-            this.btnSearchUsers.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnSearchUsers.Size = new System.Drawing.Size(139, 40);
-            this.btnSearchUsers.TabIndex = 13;
-            this.btnSearchUsers.Text = "     In hóa đơn";
-            this.btnSearchUsers.UseVisualStyleBackColor = false;
-            this.btnSearchUsers.Click += new System.EventHandler(this.btnSearchUsers_Click);
+            this.lbSumMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSumMoney.AutoSize = true;
+            this.lbSumMoney.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSumMoney.ForeColor = System.Drawing.Color.Red;
+            this.lbSumMoney.Location = new System.Drawing.Point(726, 18);
+            this.lbSumMoney.Name = "lbSumMoney";
+            this.lbSumMoney.Size = new System.Drawing.Size(21, 19);
+            this.lbSumMoney.TabIndex = 9;
+            this.lbSumMoney.Text = "...";
             // 
-            // Id_product
+            // label5
             // 
-            this.Id_product.DataPropertyName = "Id_product";
-            this.Id_product.HeaderText = "Mã sản phẩm";
-            this.Id_product.Name = "Id_product";
-            this.Id_product.ReadOnly = true;
-            this.Id_product.Width = 150;
-            // 
-            // Names
-            // 
-            this.Names.DataPropertyName = "Name";
-            this.Names.HeaderText = "Tên sản phẩm";
-            this.Names.Name = "Names";
-            this.Names.ReadOnly = true;
-            this.Names.Width = 150;
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Số lượng";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // Totals
-            // 
-            this.Totals.DataPropertyName = "Total";
-            this.Totals.HeaderText = "Tổng tiền";
-            this.Totals.Name = "Totals";
-            this.Totals.ReadOnly = true;
-            // 
-            // Sale_price
-            // 
-            this.Sale_price.DataPropertyName = "Sale_price";
-            this.Sale_price.HeaderText = "Giá bán";
-            this.Sale_price.Name = "Sale_price";
-            this.Sale_price.ReadOnly = true;
-            // 
-            // Date_created
-            // 
-            this.Date_created.DataPropertyName = "Date_created";
-            this.Date_created.HeaderText = "Ngày bán";
-            this.Date_created.Name = "Date_created";
-            this.Date_created.ReadOnly = true;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(647, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 19);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tổng tiền:";
             // 
             // frmDetailOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 538);
+            this.ClientSize = new System.Drawing.Size(897, 522);
             this.Controls.Add(this.groupBox3);
             this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "frmDetailOrder";
@@ -413,11 +413,11 @@ namespace ShopApp
             this.groupBox3.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderProduct)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -444,15 +444,15 @@ namespace ShopApp
         private System.Windows.Forms.Label lbSumMoney;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvOrderProduct;
-        private System.Windows.Forms.Label lbPersonelId;
+        private System.Windows.Forms.Label lbPersonelName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnSearchUsers;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Names;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Totals;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sale_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Totals;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_created;
     }
 }

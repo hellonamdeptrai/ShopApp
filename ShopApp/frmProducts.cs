@@ -42,6 +42,8 @@ namespace ShopApp
 
                 cbCategory.Items.Add(item);
             }
+            data.Close();
+            cmd.Cancel();
         }
 
         private void LoadDataGridView()
@@ -279,6 +281,7 @@ namespace ShopApp
             cmd.Parameters.Add(new SqlParameter("@Date_edit", DateTime.Now.Date.ToString("MM/dd/yyyy")));
 
             cmd.ExecuteNonQuery();
+            cmd.Cancel();
             LoadDataGridView();
             ResetTextBox();
             EnabledButton(false);
@@ -436,6 +439,7 @@ namespace ShopApp
             cmd.Parameters.Add(new SqlParameter("@Date_edit", DateTime.Now.Date.ToString("MM/dd/yyyy")));
 
             cmd.ExecuteNonQuery();
+            cmd.Cancel();
             LoadDataGridView();
             ResetTextBox();
             EnabledButton(false);
@@ -452,6 +456,7 @@ namespace ShopApp
                 cmd.Parameters.Add(new SqlParameter("@Id", lbId.Text));
 
                 cmd.ExecuteNonQuery();
+                cmd.Cancel();
                 LoadDataGridView();
                 ResetTextBox();
                 EnabledButton(false);
@@ -501,6 +506,7 @@ namespace ShopApp
             dgvProducts.AutoGenerateColumns = false;
             dgvProducts.DataSource = dt;
             dgvProducts.Refresh();
+            cmd.Cancel();
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)

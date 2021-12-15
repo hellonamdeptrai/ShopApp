@@ -49,6 +49,9 @@ namespace ShopApp
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnCloseCamera = new System.Windows.Forms.Button();
+            this.btnOpenCamera = new System.Windows.Forms.Button();
             this.cbCamera = new System.Windows.Forms.ComboBox();
             this.dtBirth = new System.Windows.Forms.DateTimePicker();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -88,9 +91,6 @@ namespace ShopApp
             this.btnCreate = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.ofdImage = new System.Windows.Forms.OpenFileDialog();
-            this.btnOpenCamera = new System.Windows.Forms.Button();
-            this.btnCloseCamera = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -109,7 +109,7 @@ namespace ShopApp
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(533, 492);
+            this.panel2.Size = new System.Drawing.Size(597, 522);
             this.panel2.TabIndex = 1;
             // 
             // groupBox2
@@ -119,7 +119,7 @@ namespace ShopApp
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 12F);
             this.groupBox2.Location = new System.Drawing.Point(0, 80);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(533, 412);
+            this.groupBox2.Size = new System.Drawing.Size(597, 442);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách người dùng";
@@ -146,7 +146,7 @@ namespace ShopApp
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowTemplate.Height = 50;
-            this.dgvUsers.Size = new System.Drawing.Size(527, 386);
+            this.dgvUsers.Size = new System.Drawing.Size(591, 416);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
@@ -245,7 +245,7 @@ namespace ShopApp
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(533, 80);
+            this.groupBox1.Size = new System.Drawing.Size(597, 80);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
@@ -258,7 +258,7 @@ namespace ShopApp
             this.txtSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(44, 28);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(291, 27);
+            this.txtSearch.Size = new System.Drawing.Size(355, 27);
             this.txtSearch.TabIndex = 2;
             // 
             // btnSearch
@@ -270,7 +270,7 @@ namespace ShopApp
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = global::ShopApp.Properties.Resources.icons8_search_24px_1;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(371, 20);
+            this.btnSearch.Location = new System.Drawing.Point(435, 20);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnSearch.Size = new System.Drawing.Size(119, 40);
@@ -283,11 +283,11 @@ namespace ShopApp
             // 
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(533, 0);
+            this.panel1.Location = new System.Drawing.Point(597, 0);
             this.panel1.MaximumSize = new System.Drawing.Size(400, 0);
             this.panel1.MinimumSize = new System.Drawing.Size(300, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 492);
+            this.panel1.Size = new System.Drawing.Size(300, 522);
             this.panel1.TabIndex = 0;
             // 
             // groupBox3
@@ -298,7 +298,7 @@ namespace ShopApp
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 12F);
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(300, 492);
+            this.groupBox3.Size = new System.Drawing.Size(300, 522);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết";
@@ -345,8 +345,43 @@ namespace ShopApp
             this.panel4.Location = new System.Drawing.Point(3, 23);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.panel4.Size = new System.Drawing.Size(294, 280);
+            this.panel4.Size = new System.Drawing.Size(294, 310);
             this.panel4.TabIndex = 2;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(88, 445);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(165, 27);
+            this.txtEmail.TabIndex = 43;
+            // 
+            // btnCloseCamera
+            // 
+            this.btnCloseCamera.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCloseCamera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseCamera.Location = new System.Drawing.Point(189, 287);
+            this.btnCloseCamera.Name = "btnCloseCamera";
+            this.btnCloseCamera.Size = new System.Drawing.Size(64, 31);
+            this.btnCloseCamera.TabIndex = 42;
+            this.btnCloseCamera.Text = "Đóng";
+            this.btnCloseCamera.UseVisualStyleBackColor = false;
+            this.btnCloseCamera.Click += new System.EventHandler(this.btnCloseCamera_Click);
+            // 
+            // btnOpenCamera
+            // 
+            this.btnOpenCamera.BackColor = System.Drawing.SystemColors.Control;
+            this.btnOpenCamera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenCamera.Location = new System.Drawing.Point(88, 287);
+            this.btnOpenCamera.Name = "btnOpenCamera";
+            this.btnOpenCamera.Size = new System.Drawing.Size(95, 31);
+            this.btnOpenCamera.TabIndex = 41;
+            this.btnOpenCamera.Text = "Mở Camera";
+            this.btnOpenCamera.UseVisualStyleBackColor = false;
+            this.btnOpenCamera.Click += new System.EventHandler(this.btnOpenCamera_Click);
             // 
             // cbCamera
             // 
@@ -379,8 +414,9 @@ namespace ShopApp
             this.cbbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbPosition.FormattingEnabled = true;
             this.cbbPosition.Items.AddRange(new object[] {
+            "Admin",
             "Nhân viên",
-            "Admin"});
+            "Khách hàng"});
             this.cbbPosition.Location = new System.Drawing.Point(88, 627);
             this.cbbPosition.Name = "cbbPosition";
             this.cbbPosition.Size = new System.Drawing.Size(165, 27);
@@ -686,7 +722,7 @@ namespace ShopApp
             this.panel3.Controls.Add(this.btnEdit);
             this.panel3.Controls.Add(this.btnCreate);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 303);
+            this.panel3.Location = new System.Drawing.Point(3, 333);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(294, 186);
             this.panel3.TabIndex = 0;
@@ -788,9 +824,9 @@ namespace ShopApp
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter1.Location = new System.Drawing.Point(530, 0);
+            this.splitter1.Location = new System.Drawing.Point(594, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 492);
+            this.splitter1.Size = new System.Drawing.Size(3, 522);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
@@ -799,46 +835,11 @@ namespace ShopApp
             this.ofdImage.FileName = "openFileDialog1";
             this.ofdImage.Filter = "Image files(*.ipg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
             // 
-            // btnOpenCamera
-            // 
-            this.btnOpenCamera.BackColor = System.Drawing.SystemColors.Control;
-            this.btnOpenCamera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenCamera.Location = new System.Drawing.Point(88, 287);
-            this.btnOpenCamera.Name = "btnOpenCamera";
-            this.btnOpenCamera.Size = new System.Drawing.Size(95, 31);
-            this.btnOpenCamera.TabIndex = 41;
-            this.btnOpenCamera.Text = "Mở Camera";
-            this.btnOpenCamera.UseVisualStyleBackColor = false;
-            this.btnOpenCamera.Click += new System.EventHandler(this.btnOpenCamera_Click);
-            // 
-            // btnCloseCamera
-            // 
-            this.btnCloseCamera.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCloseCamera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseCamera.Location = new System.Drawing.Point(189, 287);
-            this.btnCloseCamera.Name = "btnCloseCamera";
-            this.btnCloseCamera.Size = new System.Drawing.Size(64, 31);
-            this.btnCloseCamera.TabIndex = 42;
-            this.btnCloseCamera.Text = "Đóng";
-            this.btnCloseCamera.UseVisualStyleBackColor = false;
-            this.btnCloseCamera.Click += new System.EventHandler(this.btnCloseCamera_Click);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(88, 445);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(165, 27);
-            this.txtEmail.TabIndex = 43;
-            // 
             // frmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 492);
+            this.ClientSize = new System.Drawing.Size(897, 522);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

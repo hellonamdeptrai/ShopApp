@@ -268,6 +268,7 @@
     <None Include="Resources\icons8_plus_math_32px.png" />
     <None Include="Resources\icons8_camera_addon_identification_24px.png" />
     <None Include="Resources\icons8_print_24px.png" />
+    <None Include="Resources\icons8_settings_32px.png" />
     <Content Include="ShopDatabase.mdf" />
     <Content Include="ShopDatabase_log.ldf">
       <DependentUpon>ShopDatabase.mdf</DependentUpon>

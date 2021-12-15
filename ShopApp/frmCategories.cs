@@ -105,6 +105,7 @@ namespace ShopApp
             cmd.Parameters.Add(new SqlParameter("@Date_edit", DateTime.Now.Date.ToString("MM/dd/yyyy")));
 
             cmd.ExecuteNonQuery();
+            cmd.Cancel();
             LoadDataGridView();
             ResetTextBox();
             EnabledButton(false);
@@ -140,6 +141,7 @@ namespace ShopApp
             cmd.Parameters.Add(new SqlParameter("@Date_edit", DateTime.Now.Date.ToString("MM/dd/yyyy")));
 
             cmd.ExecuteNonQuery();
+            cmd.Cancel();
             LoadDataGridView();
             ResetTextBox();
             EnabledButton(false);
@@ -156,6 +158,7 @@ namespace ShopApp
                 cmd.Parameters.Add(new SqlParameter("@Id", lbId.Text));
 
                 cmd.ExecuteNonQuery();
+                cmd.Cancel();
                 LoadDataGridView();
                 ResetTextBox();
                 EnabledButton(false);
@@ -204,6 +207,7 @@ namespace ShopApp
             dap.Fill(dt);
             dgvCategories.DataSource = dt;
             dgvCategories.Refresh();
+            cmd.Cancel();
         }
     }
 }

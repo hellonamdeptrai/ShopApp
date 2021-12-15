@@ -108,7 +108,22 @@ namespace ShopApp
         {
             if (e.RowIndex != -1)
             {
+                string positon = "";
                 DataGridViewRow dgvRow = dgvUsers.Rows[e.RowIndex];
+
+                if (dgvRow.Cells["Position"].Value.ToString().Equals("1"))
+                {
+                    positon = "Admin";
+                }
+                else if(dgvRow.Cells["Position"].Value.ToString().Equals("2"))
+                {
+                    positon = "Nhân viên";
+                }
+                else
+                {
+                    positon = "Khách hàng";
+                }    
+
                 lbId.Text = dgvRow.Cells["Id"].Value.ToString();
                 txtName.Text = dgvRow.Cells["Names"].Value.ToString();
                 ptbAvatar.Image = Code.Functions.ComvertBytesArrayToImage((byte[])dgvRow.Cells["Avatar"].Value);
@@ -117,7 +132,7 @@ namespace ShopApp
                 txtPhone.Text = dgvRow.Cells["Phone"].Value.ToString();
                 cbbStatus.Text = dgvRow.Cells["Status"].Value.ToString() == "1" ? "Mở" : "Khóa";
                 if (frmLogin.positionLogin.Equals("1"))
-                    cbbPosition.Text = dgvRow.Cells["Position"].Value.ToString() == "1" ? "Admin" : "Nhân viên";
+                    cbbPosition.Text = positon;
                 txtAddress.Text = dgvRow.Cells["Address"].Value.ToString();
                 EnabledTextBox(true);
                 btnAdd.Enabled = false;
@@ -268,6 +283,10 @@ namespace ShopApp
                 {
                     position = 2;
                 }
+                else if (cbbPosition.SelectedItem.Equals("Khách hàng"))
+                {
+                    position = 3;
+                }
             }
             else
             {
@@ -288,6 +307,7 @@ namespace ShopApp
             cmd.Parameters.Add(new SqlParameter("@Date_edit", DateTime.Now.Date.ToString("MM/dd/yyyy")));
 
             cmd.ExecuteNonQuery();
+            cmd.Cancel();
             LoadDataGridView();
             ResetTextBox();
             EnabledButton(false);
@@ -416,6 +436,10 @@ namespace ShopApp
                 {
                     position = 2;
                 }
+                else if (cbbPosition.SelectedItem.Equals("Khách hàng"))
+                {
+                    position = 3;
+                }
             }
             else
             {
@@ -436,6 +460,7 @@ namespace ShopApp
             cmd.Parameters.Add(new SqlParameter("@Date_edit", DateTime.Now.Date.ToString("MM/dd/yyyy")));
 
             cmd.ExecuteNonQuery();
+            cmd.Cancel();
             LoadDataGridView();
             ResetTextBox();
             EnabledButton(false);
@@ -456,6 +481,7 @@ namespace ShopApp
                 cmd.Parameters.Add(new SqlParameter("@Id", lbId.Text));
 
                 cmd.ExecuteNonQuery();
+                cmd.Cancel();
                 LoadDataGridView();
                 ResetTextBox();
                 EnabledButton(false);
@@ -491,7 +517,7 @@ namespace ShopApp
         {
             string searchId = "", searchEmail = "", searchPhone = "";
 
-            SqlCommand cmd = Code.Functions.RunProcedure("SearchUsers");
+            SqlCommand cmd = null;
             if (Code.Functions.IsPhoneNumber(txtSearch.Text.Trim()))
             {
                 searchPhone = txtSearch.Text;
@@ -504,13 +530,27 @@ namespace ShopApp
             {
                 searchId = txtSearch.Text;
             }
-            cmd.Parameters.Add(new SqlParameter("@Id", searchId));
-            cmd.Parameters.Add(new SqlParameter("@Name", txtSearch.Text));
-            cmd.Parameters.Add(new SqlParameter("@Email", searchEmail));
-            cmd.Parameters.Add(new SqlParameter("@Phone", searchPhone));
 
-            cmd.ExecuteNonQuery();
+            if (frmLogin.positionLogin.Equals("1"))
+            {
+                cmd = Code.Functions.RunProcedure("SearchUsers");
+                cmd.Parameters.Add(new SqlParameter("@Id", searchId));
+                cmd.Parameters.Add(new SqlParameter("@Name", txtSearch.Text));
+                cmd.Parameters.Add(new SqlParameter("@Email", searchEmail));
+                cmd.Parameters.Add(new SqlParameter("@Phone", searchPhone));
 
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+                cmd = Code.Functions.RunProcedure("SearchCustommerUsers");
+                cmd.Parameters.Add(new SqlParameter("@Id", searchId));
+                cmd.Parameters.Add(new SqlParameter("@Name", txtSearch.Text));
+                cmd.Parameters.Add(new SqlParameter("@Email", searchEmail));
+                cmd.Parameters.Add(new SqlParameter("@Phone", searchPhone));
+
+                cmd.ExecuteNonQuery();
+            }
             DataTable dt = new DataTable();
 
             SqlDataAdapter dap = new SqlDataAdapter(cmd);
@@ -519,6 +559,7 @@ namespace ShopApp
             dgvUsers.AutoGenerateColumns = false;
             dgvUsers.DataSource = dt;
             dgvUsers.Refresh();
+            cmd.Cancel();
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)

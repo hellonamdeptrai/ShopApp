@@ -33,8 +33,10 @@ namespace ShopApp
 
             while (datay.Read())
             {
-                cbYear.Items.Add(datay[0].ToString());
+                cbYear.Items.Add(datay[0].ToString().Trim());
             }
+            datay.Close();
+            cmdy.Cancel();
 
             cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
             {
@@ -119,6 +121,8 @@ namespace ShopApp
             }
             series.Add(new LineSeries() { Title = cbMonth.SelectedItem.ToString(), Values = new ChartValues<double>(values) });
             cartesianChart1.Series = series;
+            data.Close();
+            cmd.Cancel();
         }
 
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,6 +138,8 @@ namespace ShopApp
                 cbMonth.Items.Add(datam[0].ToString());
             }
             cbMonth.Enabled = true;
+            datam.Close();
+            cmdm.Cancel();
         }
 
         private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -42,37 +42,52 @@ namespace ShopApp
 
         private void frmDetailOrder_Load(object sender, EventArgs e)
         {
+            CenterToScreen();
             LoadDataGridView();
-            lbPersonelId.Text = idPersonel;
-            lbSumMoney.Text = total;
+            lbSumMoney.Text = Functions.FormatMoney(total);
 
             SqlCommand cmd = Functions.RunProcedure("GetUserId");
             cmd.Parameters.Add(new SqlParameter("@Id", idCustommer));
             cmd.ExecuteNonQuery();
             SqlDataReader data = cmd.ExecuteReader();
-            data.Read();
+            if (data.Read())
+            {
+                lbIdUser.Text = data["Id"].ToString();
+                lbNameUser.Text = data["Name"].ToString();
+                lbEmailUser.Text = data["Email"].ToString();
+                lbPhoneUser.Text = data["Phone"].ToString();
+                lbAddressUser.Text = data["Address"].ToString();
+                data.Close();
+                cmd.Cancel();
+            }
+            else
+            {
+                MessageBox.Show("Khách hàng này đã bị xóa!");
+                Close();
+                data.Close();
+                cmd.Cancel();
+            }
 
-            lbIdUser.Text = data["Id"].ToString();
-            lbNameUser.Text = data["Name"].ToString();
-            lbEmailUser.Text = data["Email"].ToString();
-            lbPhoneUser.Text = data["Phone"].ToString();
-            lbAddressUser.Text = data["Address"].ToString();
+            SqlCommand cmdp = Functions.RunProcedure("GetUserId");
+            cmdp.Parameters.Add(new SqlParameter("@Id", idPersonel));
+            cmdp.ExecuteNonQuery();
+            SqlDataReader datap = cmdp.ExecuteReader();
+            if (datap.Read())
+            {
+                lbPersonelName.Text = datap["Name"].ToString();
+                cmdp.Cancel();
+                datap.Close();
+            }
+            else
+            {
+                datap.Close();
+                cmdp.Cancel();
+                MessageBox.Show("Nhân viên này đã bị xóa!");
+                Close();
+            }
         }
 
-        public void DataFormChill(string idOrder, string idPersonel, string idCustommer, string total)
-        {
-            this.idOrder = idOrder;
-            this.idPersonel = idPersonel;
-            this.idCustommer = idCustommer;
-            this.total = total;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnSearchUsers_Click(object sender, EventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
             // Khởi động chương trình Excel
             COMExcel.Application exApp = new COMExcel.Application();
@@ -106,33 +121,34 @@ namespace ShopApp
             exRange.Range["C2:E2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
             exRange.Range["C2:E2"].Value = "HÓA ĐƠN BÁN";
             // Biểu diễn thông tin chung của hóa đơn bán
-            
+
             exRange.Range["B6:C9"].Font.Size = 12;
             exRange.Range["B6:B6"].Value = "Mã hóa đơn:";
             exRange.Range["C6:E6"].MergeCells = true;
-            exRange.Range["C6:E6"].Value = lbIdUser.Text;
+            exRange.Range["C6:E6"].Value = idOrder.ToString();
             exRange.Range["B7:B7"].Value = "Tên khách hàng:";
             exRange.Range["C7:E7"].MergeCells = true;
-            exRange.Range["C7:E7"].Value = lbNameUser.Text;
+            exRange.Range["C7:E7"].Value = lbNameUser.Text.ToString();
             exRange.Range["B8:B8"].Value = "Địa chỉ:";
             exRange.Range["C8:E8"].MergeCells = true;
-            exRange.Range["C8:E8"].Value = lbAddressUser.Text;
+            exRange.Range["C8:E8"].Value = lbAddressUser.Text.ToString();
             exRange.Range["B9:B9"].Value = "Điện thoại:";
             exRange.Range["C9:E9"].MergeCells = true;
-            exRange.Range["C9:E9"].Value = lbPhoneUser.Text;
+            exRange.Range["C9:E9"].Value = "'"+lbPhoneUser.Text.ToString();
             exRange.Range["B10:B10"].Value = "Email:";
             exRange.Range["C10:E10"].MergeCells = true;
-            exRange.Range["C10:E10"].Value = lbEmailUser.Text;
+            exRange.Range["C10:E10"].Value = lbEmailUser.Text.ToString();
             //Tạo dòng tiêu đề bảng
-            exRange.Range["A11:F11"].Font.Bold = true;
+            exRange.Range["A11:G11"].Font.Bold = true;
             exRange.Range["A11:F11"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["C11:F11"].ColumnWidth = 12;
+            exRange.Range["C11:F11"].ColumnWidth = 15;
             exRange.Range["A11:A11"].Value = "STT";
             exRange.Range["B11:B11"].Value = "Mã SP";
             exRange.Range["C11:C11"].Value = "Tên SP";
             exRange.Range["D11:D11"].Value = "Số lượng";
             exRange.Range["E11:E11"].Value = "Giá bán";
             exRange.Range["F11:F11"].Value = "Thành tiền";
+            exRange.Range["G11:G11"].ColumnWidth = 20;
             exRange.Range["G11:G11"].Value = "Ngày bán";
             for (hang = 0; hang < dgvOrderProduct.RowCount; hang++)
             {
@@ -140,7 +156,8 @@ namespace ShopApp
                 for (cot = 0; cot < dgvOrderProduct.ColumnCount; cot++)
                 {
                     exSheet.Cells[cot + 2][hang + 12] = dgvOrderProduct.Rows[hang].Cells[cot].Value.ToString();
-                    if (cot == 4) exSheet.Cells[cot + 2][hang + 12] = dgvOrderProduct.Rows[hang].Cells[cot].Value.ToString() + "đ";
+                    if (cot == 3) exSheet.Cells[cot + 2][hang + 12] = Functions.FormatMoney(dgvOrderProduct.Rows[hang].Cells[cot].Value.ToString()).ToString() + "đ";
+                    if (cot == 4) exSheet.Cells[cot + 2][hang + 12] = Functions.FormatMoney(dgvOrderProduct.Rows[hang].Cells[cot].Value.ToString()).ToString() + "đ";
                 }
             }
             exRange = exSheet.Cells[cot][hang + 14];
@@ -148,8 +165,11 @@ namespace ShopApp
             exRange.Value2 = "Tổng tiền:";
             exRange = exSheet.Cells[cot + 1][hang + 14];
             exRange.Font.Bold = true;
-            exRange.Value2 = 3.ToString();
-            
+            exRange.Value2 = Functions.FormatMoney(total).ToString()+" VND";
+            exRange = exSheet.Cells[4][hang + 17]; //Ô A1 
+            exRange.Range["A1:C1"].MergeCells = true;
+            exRange.Range["A1:C1"].Font.Italic = true;
+            exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
             DateTime d = Convert.ToDateTime(DateTime.Now.Date.ToString("MM/dd/yyyy"));
             exRange.Range["A1:C1"].Value = "Hà Nội, ngày " + d.Day + " tháng " + d.Month + " năm " + d.Year;
             exRange.Range["A2:C2"].MergeCells = true;
@@ -159,9 +179,22 @@ namespace ShopApp
             exRange.Range["A6:C6"].MergeCells = true;
             exRange.Range["A6:C6"].Font.Italic = true;
             exRange.Range["A6:C6"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["A6:C6"].Value = "Tuấn Nam";
+            exRange.Range["A6:C6"].Value = lbPersonelName.Text;
             exSheet.Name = "Hóa đơn bán hàng";
             exApp.Visible = true;
+        }
+
+        public void DataFormChill(string idOrder, string idPersonel, string idCustommer, string total)
+        {
+            this.idOrder = idOrder;
+            this.idPersonel = idPersonel;
+            this.idCustommer = idCustommer;
+            this.total = total;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

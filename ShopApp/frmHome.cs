@@ -61,6 +61,7 @@ namespace ShopApp
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            CenterToScreen();
             if (frmLogin.positionLogin.Equals("2"))
             {
                 btnCategories.Enabled = false;

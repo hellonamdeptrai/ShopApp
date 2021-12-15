@@ -71,7 +71,7 @@ namespace ShopApp
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(80, 10);
+            this.label2.Location = new System.Drawing.Point(56, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(222, 39);
             this.label2.TabIndex = 4;
@@ -83,9 +83,9 @@ namespace ShopApp
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.panel1.Controls.Add(this.lbMoney);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(22, 245);
+            this.panel1.Location = new System.Drawing.Point(22, 275);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(383, 208);
+            this.panel1.Size = new System.Drawing.Size(336, 208);
             this.panel1.TabIndex = 6;
             // 
             // lbMoney
@@ -96,7 +96,7 @@ namespace ShopApp
             this.lbMoney.AutoSize = true;
             this.lbMoney.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMoney.ForeColor = System.Drawing.Color.White;
-            this.lbMoney.Location = new System.Drawing.Point(80, 85);
+            this.lbMoney.Location = new System.Drawing.Point(43, 96);
             this.lbMoney.Name = "lbMoney";
             this.lbMoney.Size = new System.Drawing.Size(44, 39);
             this.lbMoney.TabIndex = 5;
@@ -108,9 +108,9 @@ namespace ShopApp
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.panel2.Controls.Add(this.lbOrder);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(424, 245);
+            this.panel2.Location = new System.Drawing.Point(540, 275);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(383, 208);
+            this.panel2.Size = new System.Drawing.Size(336, 208);
             this.panel2.TabIndex = 7;
             // 
             // lbOrder
@@ -121,7 +121,7 @@ namespace ShopApp
             this.lbOrder.AutoSize = true;
             this.lbOrder.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOrder.ForeColor = System.Drawing.Color.White;
-            this.lbOrder.Location = new System.Drawing.Point(80, 85);
+            this.lbOrder.Location = new System.Drawing.Point(134, 96);
             this.lbOrder.Name = "lbOrder";
             this.lbOrder.Size = new System.Drawing.Size(44, 39);
             this.lbOrder.TabIndex = 5;
@@ -135,7 +135,7 @@ namespace ShopApp
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(80, 10);
+            this.label6.Location = new System.Drawing.Point(68, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(213, 39);
             this.label6.TabIndex = 4;
@@ -143,7 +143,7 @@ namespace ShopApp
             // 
             // frmDefault
             // 
-            this.ClientSize = new System.Drawing.Size(833, 492);
+            this.ClientSize = new System.Drawing.Size(897, 522);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbName);

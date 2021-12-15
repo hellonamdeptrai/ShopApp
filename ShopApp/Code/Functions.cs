@@ -17,8 +17,8 @@ namespace ShopApp.Code
 {
     class Functions
     {
-        public static SqlConnection con;       
-
+        public static SqlConnection con;
+        
         public static void Connect()
         {
             con = new SqlConnection();
@@ -163,6 +163,12 @@ namespace ShopApp.Code
         {
             MemoryStream ms = new MemoryStream(data);
             return Image.FromStream(ms);
+        }
+
+        public static string FormatMoney(string value)
+        {
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            return double.Parse(value).ToString("#,###", cul.NumberFormat);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopApp.Code;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace ShopApp
 
             if (data.Read())
             {
-                lbOrder.Text = data[0].ToString();
+                lbOrder.Text = Functions.FormatMoney(data[0].ToString());
             }
             cmd.Cancel();
             data.Close();
@@ -37,7 +38,7 @@ namespace ShopApp
 
             if (datac.Read())
             {
-                lbMoney.Text = datac[0].ToString();
+                lbMoney.Text = Functions.FormatMoney(datac[0].ToString()) + "đ";
             }
             cmdc.Cancel();
             datac.Close();

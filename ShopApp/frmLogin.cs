@@ -27,6 +27,7 @@ namespace ShopApp
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            CenterToScreen();
             lbPhoneError.Text = "";
             lbPasswordError.Text = "";
             Code.Functions.Connect();
@@ -76,12 +77,22 @@ namespace ShopApp
 
                 if (data.Read())
                 {
+                    if (data["Position"].ToString().Equals("3"))
+                    {
+                        MessageBox.Show("Bạn không có quyền truy cập!");
+                        data.Close();
+                        cmd.Cancel();
+                        return;
+                    }
+
                     if (data["Status"].ToString().Equals("1"))
                     {
 
                         idLogin = data["Id"].ToString();
                         nameLogin = data["Name"].ToString();
                         positionLogin = data["Position"].ToString();
+                        data.Close();
+                        cmd.Cancel();
                         frmHome frm = new frmHome();
                         frm.Show();
                     }
@@ -89,12 +100,14 @@ namespace ShopApp
                     {
                         MessageBox.Show("Tài khoản này đã bị khóa");
                         data.Close();
+                        cmd.Cancel();
                     }
                 }
                 else
                 {
                     MessageBox.Show("Sai tên email hoặc mật khẩu, vui lòng kiểm tra lại");
                     data.Close();
+                    cmd.Cancel();
                 }
             }
             catch(Exception ex)

@@ -73,6 +73,14 @@ namespace ShopApp
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvCarts = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbAddressUser = new System.Windows.Forms.Label();
@@ -86,19 +94,11 @@ namespace ShopApp
             this.lbIdUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.btnCreateCart = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.lbSumMoney = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCreateCart = new System.Windows.Forms.Button();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -113,9 +113,9 @@ namespace ShopApp
             this.panel9.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -126,7 +126,7 @@ namespace ShopApp
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(413, 492);
+            this.panel2.Size = new System.Drawing.Size(477, 522);
             this.panel2.TabIndex = 1;
             // 
             // splitter2
@@ -134,7 +134,7 @@ namespace ShopApp
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(0, 205);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(413, 3);
+            this.splitter2.Size = new System.Drawing.Size(477, 3);
             this.splitter2.TabIndex = 5;
             this.splitter2.TabStop = false;
             // 
@@ -146,7 +146,7 @@ namespace ShopApp
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 12F);
             this.groupBox2.Location = new System.Drawing.Point(0, 205);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(413, 287);
+            this.groupBox2.Size = new System.Drawing.Size(477, 317);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách sản phẩm";
@@ -157,7 +157,7 @@ namespace ShopApp
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 78);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(407, 206);
+            this.panel8.Size = new System.Drawing.Size(471, 236);
             this.panel8.TabIndex = 6;
             // 
             // dgvProducts
@@ -184,7 +184,7 @@ namespace ShopApp
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.RowTemplate.Height = 50;
-            this.dgvProducts.Size = new System.Drawing.Size(407, 206);
+            this.dgvProducts.Size = new System.Drawing.Size(471, 236);
             this.dgvProducts.TabIndex = 1;
             this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             // 
@@ -295,7 +295,7 @@ namespace ShopApp
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(3, 23);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(407, 55);
+            this.panel7.Size = new System.Drawing.Size(471, 55);
             this.panel7.TabIndex = 5;
             // 
             // txtSearchProducts
@@ -306,7 +306,7 @@ namespace ShopApp
             this.txtSearchProducts.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchProducts.Location = new System.Drawing.Point(40, 15);
             this.txtSearchProducts.Name = "txtSearchProducts";
-            this.txtSearchProducts.Size = new System.Drawing.Size(171, 27);
+            this.txtSearchProducts.Size = new System.Drawing.Size(235, 27);
             this.txtSearchProducts.TabIndex = 4;
             // 
             // btnSearchProducts
@@ -318,7 +318,7 @@ namespace ShopApp
             this.btnSearchProducts.ForeColor = System.Drawing.Color.White;
             this.btnSearchProducts.Image = global::ShopApp.Properties.Resources.icons8_search_24px_1;
             this.btnSearchProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchProducts.Location = new System.Drawing.Point(247, 7);
+            this.btnSearchProducts.Location = new System.Drawing.Point(311, 7);
             this.btnSearchProducts.Name = "btnSearchProducts";
             this.btnSearchProducts.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnSearchProducts.Size = new System.Drawing.Size(119, 40);
@@ -335,7 +335,7 @@ namespace ShopApp
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(413, 205);
+            this.groupBox1.Size = new System.Drawing.Size(477, 205);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách khách hàng";
@@ -346,7 +346,7 @@ namespace ShopApp
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 78);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(407, 124);
+            this.panel6.Size = new System.Drawing.Size(471, 124);
             this.panel6.TabIndex = 5;
             // 
             // dgvUsers
@@ -371,7 +371,7 @@ namespace ShopApp
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowTemplate.Height = 50;
-            this.dgvUsers.Size = new System.Drawing.Size(407, 124);
+            this.dgvUsers.Size = new System.Drawing.Size(471, 124);
             this.dgvUsers.TabIndex = 1;
             this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
@@ -469,7 +469,7 @@ namespace ShopApp
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(3, 23);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(407, 55);
+            this.panel10.Size = new System.Drawing.Size(471, 55);
             this.panel10.TabIndex = 4;
             // 
             // txtSearchUsers
@@ -480,7 +480,7 @@ namespace ShopApp
             this.txtSearchUsers.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchUsers.Location = new System.Drawing.Point(40, 15);
             this.txtSearchUsers.Name = "txtSearchUsers";
-            this.txtSearchUsers.Size = new System.Drawing.Size(171, 27);
+            this.txtSearchUsers.Size = new System.Drawing.Size(235, 27);
             this.txtSearchUsers.TabIndex = 4;
             // 
             // btnSearchUsers
@@ -492,7 +492,7 @@ namespace ShopApp
             this.btnSearchUsers.ForeColor = System.Drawing.Color.White;
             this.btnSearchUsers.Image = global::ShopApp.Properties.Resources.icons8_search_24px_1;
             this.btnSearchUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchUsers.Location = new System.Drawing.Point(247, 7);
+            this.btnSearchUsers.Location = new System.Drawing.Point(311, 7);
             this.btnSearchUsers.Name = "btnSearchUsers";
             this.btnSearchUsers.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnSearchUsers.Size = new System.Drawing.Size(119, 40);
@@ -505,11 +505,11 @@ namespace ShopApp
             // 
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(413, 0);
+            this.panel1.Location = new System.Drawing.Point(477, 0);
             this.panel1.MaximumSize = new System.Drawing.Size(700, 0);
             this.panel1.MinimumSize = new System.Drawing.Size(300, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 492);
+            this.panel1.Size = new System.Drawing.Size(420, 522);
             this.panel1.TabIndex = 0;
             // 
             // groupBox3
@@ -522,7 +522,7 @@ namespace ShopApp
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 12F);
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(420, 492);
+            this.groupBox3.Size = new System.Drawing.Size(420, 522);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết đơn hàng";
@@ -533,7 +533,7 @@ namespace ShopApp
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 193);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(414, 163);
+            this.panel9.Size = new System.Drawing.Size(414, 193);
             this.panel9.TabIndex = 4;
             // 
             // groupBox4
@@ -542,7 +542,7 @@ namespace ShopApp
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(414, 163);
+            this.groupBox4.Size = new System.Drawing.Size(414, 193);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Giỏ hàng";
@@ -564,11 +564,65 @@ namespace ShopApp
             this.dgvCarts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCarts.Location = new System.Drawing.Point(3, 23);
             this.dgvCarts.Name = "dgvCarts";
-            this.dgvCarts.Size = new System.Drawing.Size(408, 137);
+            this.dgvCarts.Size = new System.Drawing.Size(408, 167);
             this.dgvCarts.TabIndex = 0;
             this.dgvCarts.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvCarts_CellBeginEdit);
             this.dgvCarts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarts_CellContentClick);
             this.dgvCarts.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarts_CellEndEdit);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Mã SP";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Tên SP";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            this.brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "Hãng";
+            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            this.brandDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Số lượng";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // salePriceDataGridViewTextBoxColumn
+            // 
+            this.salePriceDataGridViewTextBoxColumn.DataPropertyName = "SalePrice";
+            this.salePriceDataGridViewTextBoxColumn.HeaderText = "Giá bán";
+            this.salePriceDataGridViewTextBoxColumn.Name = "salePriceDataGridViewTextBoxColumn";
+            this.salePriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Tổng tiền";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Xóa";
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Text = "Xóa";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(ShopApp.Code.Product);
             // 
             // splitter3
             // 
@@ -706,38 +760,22 @@ namespace ShopApp
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.btnCreateCart);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 356);
+            this.panel3.Location = new System.Drawing.Point(3, 386);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(414, 133);
             this.panel3.TabIndex = 0;
             // 
-            // splitter1
+            // label6
             // 
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter1.Location = new System.Drawing.Point(410, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 492);
-            this.splitter1.TabIndex = 2;
-            this.splitter1.TabStop = false;
-            // 
-            // btnCreateCart
-            // 
-            this.btnCreateCart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnCreateCart.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateCart.ForeColor = System.Drawing.Color.White;
-            this.btnCreateCart.Image = global::ShopApp.Properties.Resources.icons8_shopping_cart_32px_1;
-            this.btnCreateCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateCart.Location = new System.Drawing.Point(109, 61);
-            this.btnCreateCart.Name = "btnCreateCart";
-            this.btnCreateCart.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnCreateCart.Size = new System.Drawing.Size(178, 54);
-            this.btnCreateCart.TabIndex = 7;
-            this.btnCreateCart.Text = "     Thanh toán";
-            this.btnCreateCart.UseVisualStyleBackColor = false;
-            this.btnCreateCart.Click += new System.EventHandler(this.btnCreateCart_Click);
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(372, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 19);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "VNĐ";
             // 
             // lbSumMoney
             // 
@@ -762,77 +800,39 @@ namespace ShopApp
             this.label5.TabIndex = 8;
             this.label5.Text = "Tổng tiền:";
             // 
-            // label6
+            // btnCreateCart
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(372, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 19);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "VNĐ";
+            this.btnCreateCart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnCreateCart.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateCart.ForeColor = System.Drawing.Color.White;
+            this.btnCreateCart.Image = global::ShopApp.Properties.Resources.icons8_shopping_cart_32px_1;
+            this.btnCreateCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateCart.Location = new System.Drawing.Point(109, 61);
+            this.btnCreateCart.Name = "btnCreateCart";
+            this.btnCreateCart.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnCreateCart.Size = new System.Drawing.Size(178, 54);
+            this.btnCreateCart.TabIndex = 7;
+            this.btnCreateCart.Text = "     Thanh toán";
+            this.btnCreateCart.UseVisualStyleBackColor = false;
+            this.btnCreateCart.Click += new System.EventHandler(this.btnCreateCart_Click);
             // 
-            // Delete
+            // splitter1
             // 
-            this.Delete.HeaderText = "Xóa";
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Delete.Text = "Xóa";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Mã SP";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Tên SP";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // brandDataGridViewTextBoxColumn
-            // 
-            this.brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
-            this.brandDataGridViewTextBoxColumn.HeaderText = "Hãng";
-            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
-            this.brandDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Số lượng";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // salePriceDataGridViewTextBoxColumn
-            // 
-            this.salePriceDataGridViewTextBoxColumn.DataPropertyName = "SalePrice";
-            this.salePriceDataGridViewTextBoxColumn.HeaderText = "Giá bán";
-            this.salePriceDataGridViewTextBoxColumn.Name = "salePriceDataGridViewTextBoxColumn";
-            this.salePriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Tổng tiền";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(ShopApp.Code.Product);
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter1.Location = new System.Drawing.Point(474, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 522);
+            this.splitter1.TabIndex = 2;
+            this.splitter1.TabStop = false;
             // 
             // frmCarts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 492);
+            this.ClientSize = new System.Drawing.Size(897, 522);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -855,11 +855,11 @@ namespace ShopApp
             this.panel9.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

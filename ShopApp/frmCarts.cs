@@ -20,6 +20,7 @@ namespace ShopApp
         }
 
         string userID = frmLogin.idLogin;
+        string totalMoney;
 
         List<Product> quantiyEdit = new List<Product>();
 
@@ -50,7 +51,7 @@ namespace ShopApp
         {
             string searchId = "", searchEmail = "", searchPhone = "";
 
-            SqlCommand cmd = Functions.RunProcedure("SearchUsers");
+            SqlCommand cmd = Functions.RunProcedure("SearchCustommerUsers");
             if (Functions.IsPhoneNumber(txtSearchUsers.Text.Trim()))
             {
                 searchPhone = txtSearchUsers.Text;
@@ -78,6 +79,7 @@ namespace ShopApp
             dgvUsers.AutoGenerateColumns = false;
             dgvUsers.DataSource = dt;
             dgvUsers.Refresh();
+            cmd.Cancel();
         }
 
         private void btnSearchProducts_Click(object sender, EventArgs e)
@@ -102,6 +104,7 @@ namespace ShopApp
             dgvProducts.AutoGenerateColumns = false;
             dgvProducts.DataSource = dt;
             dgvProducts.Refresh();
+            cmd.Cancel();
         }
 
         private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -225,12 +228,16 @@ namespace ShopApp
                     sum += quantity;
 
                 }
-                lbSumMoney.Text = sum.ToString();
+                lbSumMoney.Text = Functions.FormatMoney(sum.ToString());
+                totalMoney = sum.ToString();
             }
             else
+            {
                 lbSumMoney.Text = "...";
+                totalMoney = "";
+            }
         }
-
+        
         private void ResetOrders()
         {
             lbIdUser.Text = "...";
@@ -239,6 +246,7 @@ namespace ShopApp
             lbPhoneUser.Text = "...";
             lbAddressUser.Text = "...";
             lbSumMoney.Text = "...";
+            totalMoney = "";
             dgvCarts.Rows.Clear();
             dgvCarts.Refresh();
         }
@@ -259,7 +267,7 @@ namespace ShopApp
             }
 
             frmPayment frm = new frmPayment();
-            frm.Payment(Int64.Parse(lbSumMoney.Text));
+            frm.Payment(Int64.Parse(totalMoney));
             frm.ShowDialog();
 
             if (isClosePayment) 
@@ -273,7 +281,7 @@ namespace ShopApp
 
             cmd.Parameters.Add(new SqlParameter("@Id", idOrder));
             cmd.Parameters.Add(new SqlParameter("@Customer_id", lbIdUser.Text));
-            cmd.Parameters.Add(new SqlParameter("@Money", lbSumMoney.Text));
+            cmd.Parameters.Add(new SqlParameter("@Money", totalMoney));
             cmd.Parameters.Add(new SqlParameter("@Personnel_id", userID));
             cmd.Parameters.Add(new SqlParameter("@Day", DateTime.Now.Date.ToString("dd")));
             cmd.Parameters.Add(new SqlParameter("@Month", DateTime.Now.Date.ToString("MM")));
@@ -314,7 +322,7 @@ namespace ShopApp
             }
             LoadDataGridView("GetProducts", dgvProducts);
             frmDetailOrder frmDO = new frmDetailOrder();
-            frmDO.DataFormChill(idOrder, userID, lbIdUser.Text, lbSumMoney.Text);
+            frmDO.DataFormChill(idOrder, userID, lbIdUser.Text, totalMoney);
             frmDO.ShowDialog();
             ResetOrders();
         }

@@ -37,6 +37,7 @@ namespace ShopApp
             this.btnCategories = new System.Windows.Forms.Button();
             this.btnBills = new System.Windows.Forms.Button();
             this.btnStatistics = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnMain = new System.Windows.Forms.Panel();
@@ -52,7 +53,7 @@ namespace ShopApp
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(235, 531);
+            this.panelMenu.Size = new System.Drawing.Size(235, 641);
             this.panelMenu.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -64,10 +65,11 @@ namespace ShopApp
             this.flowLayoutPanel1.Controls.Add(this.btnCategories);
             this.flowLayoutPanel1.Controls.Add(this.btnBills);
             this.flowLayoutPanel1.Controls.Add(this.btnStatistics);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 80);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 451);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 561);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnHome
@@ -190,6 +192,25 @@ namespace ShopApp
             this.btnStatistics.UseVisualStyleBackColor = true;
             this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
+            this.button1.Image = global::ShopApp.Properties.Resources.icons8_settings_32px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 399);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(210, 60);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "   Cài đặt";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -205,7 +226,7 @@ namespace ShopApp
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(235, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(649, 80);
+            this.panel1.Size = new System.Drawing.Size(913, 80);
             this.panel1.TabIndex = 1;
             // 
             // pnMain
@@ -213,14 +234,14 @@ namespace ShopApp
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(235, 80);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(649, 451);
+            this.pnMain.Size = new System.Drawing.Size(913, 561);
             this.pnMain.TabIndex = 2;
             // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 531);
+            this.ClientSize = new System.Drawing.Size(1148, 641);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
@@ -240,14 +261,15 @@ namespace ShopApp
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnStatistics;
-        private System.Windows.Forms.Button btnBills;
-        private System.Windows.Forms.Button btnCategories;
-        private System.Windows.Forms.Button btnUsers;
-        private System.Windows.Forms.Button btnProducts;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnMain;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnProducts;
+        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.Button btnCategories;
+        private System.Windows.Forms.Button btnBills;
+        private System.Windows.Forms.Button btnStatistics;
+        private System.Windows.Forms.Button button1;
     }
 }
 

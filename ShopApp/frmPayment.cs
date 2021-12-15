@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShopApp.Code;
 
 namespace ShopApp
 {
@@ -60,7 +61,7 @@ namespace ShopApp
             {
                 Int64 money = Int64.Parse(txtPayment.Text) - data;
 
-                MessageBox.Show("Trả lại tiền cho khách hàng '" + money + "'đ");
+                MessageBox.Show("Trả lại tiền cho khách hàng " + Functions.FormatMoney(money.ToString()) + "đ");
                 frmCarts.isClosePayment = false;
                 Close();
             }
@@ -68,8 +69,9 @@ namespace ShopApp
 
         private void frmPayment_Load(object sender, EventArgs e)
         {
+            CenterToScreen();
             lbPaymentError.Text = "";
-            txtPayment.Focus();
+            txtPayment.Select();
         }
     }
 }
