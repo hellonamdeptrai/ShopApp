@@ -42,6 +42,8 @@ namespace ShopApp
 
         private void frmDetailOrder_Load(object sender, EventArgs e)
         {
+            btnPrint.BackColor = frmHome.color;
+            button2.BackColor = frmHome.color;
             CenterToScreen();
             LoadDataGridView();
             lbSumMoney.Text = Functions.FormatMoney(total);

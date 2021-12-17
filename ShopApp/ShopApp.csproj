@@ -140,6 +140,12 @@
     <Compile Include="frmPayment.Designer.cs">
       <DependentUpon>frmPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
@@ -269,6 +278,8 @@
     <None Include="Resources\icons8_camera_addon_identification_24px.png" />
     <None Include="Resources\icons8_print_24px.png" />
     <None Include="Resources\icons8_settings_32px.png" />
+    <None Include="Resources\icons8_checkmark_24px.png" />
+    <None Include="Resources\onlinelogomaker-112021-1428-8152.png" />
     <Content Include="ShopDatabase.mdf" />
     <Content Include="ShopDatabase_log.ldf">
       <DependentUpon>ShopDatabase.mdf</DependentUpon>

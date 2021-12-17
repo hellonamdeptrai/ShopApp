@@ -23,6 +23,8 @@ namespace ShopApp
 
         private void frmAnalytics_Load(object sender, EventArgs e)
         {
+            btnSearch.BackColor = frmHome.color;
+            btnFilter.BackColor = frmHome.color;
             lbYearError.Text = "";
             lbMonthError.Text = "";
             cbMonth.Enabled = false;

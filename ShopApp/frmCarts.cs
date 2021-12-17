@@ -34,6 +34,9 @@ namespace ShopApp
 
         private void frmCarts_Load(object sender, EventArgs e)
         {
+            btnSearchUsers.BackColor = frmHome.color;
+            btnSearchProducts.BackColor = frmHome.color;
+            btnCreateCart.BackColor = frmHome.color;
             LoadDataGridView("GetCustomerUsers", dgvUsers);
             LoadDataGridView("GetProducts", dgvProducts);
             for (int i = 0; i < dgvProducts.RowCount; i++)

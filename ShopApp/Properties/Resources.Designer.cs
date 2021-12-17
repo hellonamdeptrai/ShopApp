@@ -93,6 +93,16 @@ namespace ShopApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_checkmark_24px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_checkmark_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_create_24px {
             get {
                 object obj = ResourceManager.GetObject("icons8_create_24px", resourceCulture);
@@ -236,6 +246,16 @@ namespace ShopApp.Properties {
         internal static System.Drawing.Bitmap icons8_user_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_user_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap onlinelogomaker_112021_1428_8152 {
+            get {
+                object obj = ResourceManager.GetObject("onlinelogomaker-112021-1428-8152", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

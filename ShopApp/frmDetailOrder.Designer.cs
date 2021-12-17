@@ -408,7 +408,7 @@ namespace ShopApp
             this.Controls.Add(this.groupBox3);
             this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "frmDetailOrder";
-            this.Text = "frmDetailOrder";
+            this.Text = "Chi tiết đơn hàng";
             this.Load += new System.EventHandler(this.frmDetailOrder_Load);
             this.groupBox3.ResumeLayout(false);
             this.panel9.ResumeLayout(false);

@@ -25,6 +25,11 @@ namespace ShopApp
 
         private void frmUsers_Load(object sender, EventArgs e)
         {
+            btnSearch.BackColor = frmHome.color;
+            btnCreate.BackColor = frmHome.color;
+            btnEdit.BackColor = frmHome.color;
+            btnDelete.BackColor = frmHome.color;
+            btnExit.BackColor = frmHome.color;
             ResetTextBox();
             ResetError();
             EnabledButton(false);

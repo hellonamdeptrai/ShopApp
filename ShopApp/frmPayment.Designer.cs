@@ -119,7 +119,7 @@ namespace ShopApp
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(329, 205);
             this.Name = "frmPayment";
-            this.Text = "frmPayment";
+            this.Text = "Thanh toán tiền";
             this.Load += new System.EventHandler(this.frmPayment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

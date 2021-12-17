@@ -458,7 +458,7 @@ namespace ShopApp
             this.ptbAvatar.Location = new System.Drawing.Point(88, 80);
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.Size = new System.Drawing.Size(165, 123);
-            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbAvatar.TabIndex = 34;
             this.ptbAvatar.TabStop = false;
             // 

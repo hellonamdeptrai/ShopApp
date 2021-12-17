@@ -27,6 +27,8 @@ namespace ShopApp
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            labelLogin.ForeColor = frmHome.color;
+            btnLogin.BackColor = frmHome.color;
             CenterToScreen();
             lbPhoneError.Text = "";
             lbPasswordError.Text = "";

@@ -20,6 +20,9 @@ namespace ShopApp
         }
         private void frmDefault_Load(object sender, EventArgs e)
         {
+            lbName.ForeColor = frmHome.color;
+            panel1.BackColor = frmHome.color;
+            panel2.BackColor = frmHome.color;
             lbName.Text = frmLogin.nameLogin;
             SqlCommand cmd = Code.Functions.RunProcedure("CountOrders");
             cmd.ExecuteNonQuery();

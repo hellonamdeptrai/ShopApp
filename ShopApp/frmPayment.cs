@@ -69,6 +69,8 @@ namespace ShopApp
 
         private void frmPayment_Load(object sender, EventArgs e)
         {
+            btnPayment.BackColor = frmHome.color;
+            button1.BackColor = frmHome.color;
             CenterToScreen();
             lbPaymentError.Text = "";
             txtPayment.Select();
