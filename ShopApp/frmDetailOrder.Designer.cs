@@ -361,9 +361,9 @@ namespace ShopApp
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(10, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 19);
+            this.label7.Size = new System.Drawing.Size(103, 19);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Mã nhân viên:";
+            this.label7.Text = "Tên nhân viên:";
             // 
             // label6
             // 
